@@ -1,5 +1,5 @@
 //
-//  MAViewController.h
+//  MACustomNavigationBar.h
 //  MiniApp
 //
 //  Created by Trieu Khang on 1/21/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MAViewController : UIViewController
+@interface MACustomNavigationBar : UINavigationBar
 
 @end
