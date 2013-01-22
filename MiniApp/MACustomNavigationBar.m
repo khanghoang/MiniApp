@@ -2,7 +2,7 @@
 //  MACustomNavigationBar.m
 //  MiniApp
 //
-//  Created by Trieu Khang on 1/21/13.
+//  Created by Trieu Khang on 1/22/13.
 //  Copyright (c) 2013 Hoang Trieu Khang. All rights reserved.
 //
 
@@ -22,12 +22,10 @@
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-*/
-- (void)drawRect:(CGRect)rect {
-	UIImage *image = [UIImage imageNamed:@"CustomNavigation.png"];
-	[image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+- (void)drawRect:(CGRect)rect
+{
+    // Drawing code
 }
-
-
+*/
 
 @end
