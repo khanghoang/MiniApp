@@ -45,28 +45,28 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //get data
-    [AMDownloader getDataFromURL:STAFF_DETAILS_URL
-         success:^(id JSON) {
-             
-             //do something when success
-             //         NSLog(@"%@", [JSON description]);
-             
-             NSArray* temp = (NSArray*) JSON;
-             
-             [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                 //for each element;
-                 [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-                 //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
-             }];
-             
-             //refresh table
-             [self.tableView reloadData];
-             
-         }
-         failure:^(NSError *error) {
-             //do something
-             NSLog(@"%@", @"Connection Error");
-         }];
+//    [AMDownloader getDataFromURL:STAFF_DETAILS_URL
+//         success:^(id JSON) {
+//             
+//             //do something when success
+//             //         NSLog(@"%@", [JSON description]);
+//             
+//             NSArray* temp = (NSArray*) JSON;
+//             
+//             [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                 //for each element;
+//                 [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
+//                 //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
+//             }];
+//             
+//             //refresh table
+//             [self.tableView reloadData];
+//             
+//         }
+//         failure:^(NSError *error) {
+//             //do something
+//             NSLog(@"%@", @"Connection Error");
+//         }];
     
     
     __weak MAStaffsViewController *weakSelf = self;
@@ -74,39 +74,47 @@
     // setup pull-to-refresh
     [self.tableView addPullToRefreshWithActionHandler:^{
         
-        int64_t delayInSeconds = 2.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [weakSelf.tableView beginUpdates];
-            
-            //get data
-            [AMDownloader getDataFromURL:STAFF_DETAILS_URL
-                 success:^(id JSON) {
-                     
-                     //do something when success
-                     //         NSLog(@"%@", [JSON description]);
-                     
-                     NSArray* temp = (NSArray*) JSON;
-                     
-                     [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                         //for each element;
-                         [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-                         //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
+//        int64_t delayInSeconds = 2.0;
+//        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        
+//        __block BOOL flag = NO;
+        
+        dispatch_queue_t downloadQueue = dispatch_queue_create("refresh", NULL);
+        dispatch_async(downloadQueue, ^(void){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView beginUpdates];
+                
+                //get data
+                [AMDownloader getDataFromURL:STAFF_DETAILS_URL
+                     success:^(id JSON) {
+                         
+                         //do something when success
+                         //         NSLog(@"%@", [JSON description]);
+                         
+                         NSArray* temp = (NSArray*) JSON;
+                         
+                         [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                             //for each element;
+                             [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
+                             //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
+                         }];
+                         
+                         //refresh table
+                         [self.tableView reloadData];
+                         
+                         [weakSelf.tableView.pullToRefreshView stopAnimating];
+                         
+                     }
+                     failure:^(NSError *error) {
+                         //do something
+                         NSLog(@"%@", @"Connection Error");
                      }];
-                     
-                     //refresh table
-                     [self.tableView reloadData];
-                     
-                 }
-                 failure:^(NSError *error) {
-                     //do something
-                     NSLog(@"%@", @"Connection Error");
-                 }];
+                
+                
+                [weakSelf.tableView endUpdates];
+                
+            });
             
-            
-            [weakSelf.tableView endUpdates];
-            
-            [weakSelf.tableView.pullToRefreshView stopAnimating];
         });
     }];
 }
