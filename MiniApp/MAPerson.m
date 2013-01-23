@@ -16,6 +16,7 @@
     
     person.name = [dic valueForKey:@"name"];
     person.role = [dic valueForKey:@"role"];
+    person.image = [dic valueForKey:@"image"];
     
     return person;
 }

@@ -12,7 +12,7 @@
 
 const NSString* COMPANY_URL = @"http://2359media.com";
 
-const NSString* STAFF_DETAILS_URL = @"https://api.mongolab.com/api/1/databases/2359media/collections/user?apiKey=50bc7070e4b07d292a90b92b";
+const NSString* STAFF_DETAILS_URL = @"https://dl.dropbox.com/u/11295402/MiniEval/data.json";
 
 const NSString* EXTEND_DETAILS_URL = @"...";
 

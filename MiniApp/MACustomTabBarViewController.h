@@ -13,5 +13,4 @@
 
 @property (weak, nonatomic) IBOutlet MACustomTabBar *tabBar;
 
-
 @end

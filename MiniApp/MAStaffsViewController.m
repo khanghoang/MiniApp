@@ -1,4 +1,4 @@
-//
+    //
 //  MAStaffsViewController.m
 //  MiniApp
 //
@@ -11,6 +11,8 @@
 #import "MAPerson.h"
 #import "MAStaffsTableViewCell.h"
 #import "SVPullToRefresh.h"
+#import "MAStaffDetailsViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MAStaffsViewController ()
 
@@ -45,40 +47,34 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //get data
-//    [AMDownloader getDataFromURL:STAFF_DETAILS_URL
-//         success:^(id JSON) {
-//             
-//             //do something when success
-//             //         NSLog(@"%@", [JSON description]);
-//             
-//             NSArray* temp = (NSArray*) JSON;
-//             
-//             [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                 //for each element;
-//                 [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-//                 //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
-//             }];
-//             
-//             //refresh table
-//             [self.tableView reloadData];
-//             
-//         }
-//         failure:^(NSError *error) {
-//             //do something
-//             NSLog(@"%@", @"Connection Error");
-//         }];
+    [AMDownloader getDataFromURL:STAFF_DETAILS_URL
+         success:^(id JSON) {
+             
+             //do something when success
+             //         NSLog(@"%@", [JSON description]);
+             
+             NSArray* temp = (NSArray*) JSON;
+             
+             [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                 //for each element;
+                 [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
+                 //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
+             }];
+             
+             //refresh table
+             [self.tableView reloadData];
+             
+         }
+         failure:^(NSError *error) {
+             //do something
+             NSLog(@"%@", @"Connection Error");
+         }];
     
     
     __weak MAStaffsViewController *weakSelf = self;
     
     // setup pull-to-refresh
     [self.tableView addPullToRefreshWithActionHandler:^{
-        
-//        int64_t delayInSeconds = 2.0;
-//        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        
-//        __block BOOL flag = NO;
-        
         dispatch_queue_t downloadQueue = dispatch_queue_create("refresh", NULL);
         dispatch_async(downloadQueue, ^(void){
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -89,19 +85,17 @@
                      success:^(id JSON) {
                          
                          //do something when success
-                         //         NSLog(@"%@", [JSON description]);
-                         
                          NSArray* temp = (NSArray*) JSON;
                          
                          [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                              //for each element;
                              [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-                             //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
                          }];
                          
                          //refresh table
                          [self.tableView reloadData];
                          
+                         //end loading status
                          [weakSelf.tableView.pullToRefreshView stopAnimating];
                          
                      }
@@ -159,18 +153,24 @@
     
     if(!cell)
         cell = [[MAStaffsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    
+    NSLog(@"w%g h%g", cell.imageView.frame.size.width, cell.imageView.frame.size.height);
+
     // Configure the cell...
     cell.textName.text = [[self.listStaffs objectAtIndex:indexPath.row] name];
     cell.textName.textColor = [UIColor blackColor];
     cell.textRole.text = [[self.listStaffs objectAtIndex:indexPath.row] role];
     
+    [cell.imageView setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] image]] placeholderImage:[UIImage imageNamed:@"images 2.jpeg"]];
+    
+    cell.imageView.layer.cornerRadius = 23;
+    cell.imageView.clipsToBounds = YES;
+    
     cell.starImage.hidden = YES;
     
     if([[self getNumberOfTheMostFamous] integerValue] == [[self getNumberOfName:[[self.listStaffs objectAtIndex:indexPath.row] name]] integerValue])
     {
-        NSLog(@"%d", [[self getNumberOfTheMostFamous] integerValue]);
-        NSLog(@"%d", [[self getNumberOfName:[[self.listStaffs objectAtIndex:indexPath.row] name]] integerValue]);
+//        NSLog(@"%d", [[self getNumberOfTheMostFamous] integerValue]);
+//        NSLog(@"%d", [[self getNumberOfName:[[self.listStaffs objectAtIndex:indexPath.row] name]] integerValue]);
         cell.textName.textColor = [UIColor orangeColor];
         
         cell.starImage.hidden = NO;
@@ -178,45 +178,6 @@
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -256,7 +217,7 @@
     
     [data synchronize];
     
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 - (NSNumber*)getNumberOfTheMostFamous
@@ -295,8 +256,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [self increaseHitOf:[[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row] name]];
-    NSLog(@"Most famous = %@", [self getNumberOfTheMostFamous]);
+    if([segue.identifier isEqualToString:@"Show staff details"])
+    {
+        [self increaseHitOf:[[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row] name]];
+        NSLog(@"Most famous = %@", [self getNumberOfTheMostFamous]);
+        
+        [segue.destinationViewController setPerson:[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row]];
+        
+        //[self.tableView reloadData];
+    }
 }
 
 @end
