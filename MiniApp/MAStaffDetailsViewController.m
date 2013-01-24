@@ -8,6 +8,10 @@
 
 #import "MAStaffDetailsViewController.h"
 #import "AddressBook/AddressBook.h"
+#import "MAPerson.h"
+#import "MAStaffDetailsCell.h"
+#import "AFNetworking.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MAStaffDetailsViewController ()
 
@@ -24,6 +28,12 @@
     return self;
 }
 
+- (void)didTapBackBarItem:(id)sender {
+    if(self.navigationController.viewControllers.count > 1) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,7 +43,38 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Create Back Button
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = CGRectMake(0,0,44,44); // width=44, height=44
+    
+    // Set Button Image
+    UIImage *backButtonImage = [UIImage imageNamed:@"icon_back.png"];
+    [backButton setBackgroundImage:backButtonImage forState:UIControlStateNormal];
+    
+    // Important: Set Button Action to go back
+    [backButton addTarget:self action:@selector(didTapBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    self.navigationItem.leftBarButtonItem = backBarButtonItem;
+
+    // Create Add Contact Button
+    UIButton *addToContactButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    addToContactButton.frame = CGRectMake(0, 0, 44, 44);
+    
+    UIImage *addToContactButtonImage = [UIImage imageNamed:@"icon_add_contact.png"];
+    [addToContactButton setBackgroundImage:addToContactButtonImage forState:UIControlStateNormal];
+    
+    [addToContactButton addTarget:self action:@selector(addedToContact:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *addToContactBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:addToContactButton];
+    
+    self.navigationItem.rightBarButtonItem = addToContactBarButtonItem;
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -41,38 +82,59 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete@ method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
+}
+
+-(void)addedToContact:(id)person
+{
+    if ([self.person isKindOfClass:[MAPerson class]]) {
+        // Do add to address book here
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+//    return [[self.person getPropertiesFromPerson]count];
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    MAStaffDetailsCell *cell;
+    
+    switch (indexPath.row) {
+        case 0:
+            {
+            // Is name
+                cell = [tableView dequeueReusableCellWithIdentifier:@"Name" forIndexPath:indexPath];
+                [cell.rightImage setImageWithURL:[NSURL URLWithString:self.person.imageUrl] placeholderImage:@"image 2.jpeg"];
+                
+                cell.rightImage.layer.cornerRadius = cell.rightImage.frame.size.width / 2;
+                cell.rightImage.clipsToBounds = YES;
+                
+                cell.leftDetail.text = self.person.role;
+                cell.leftDetail.numberOfLines = 0;                
+            }
+            break;
+        default:
+            break;
+    }
+    
     
     // Configure the cell...
     
     return cell;
 }
-
-- (IBAction)addToAddressBook:(id)sender {
-
-    NSLog(@"%@", self.person.name);
-
-}
-
 
 /*
 // Override to support conditional editing of the table view.

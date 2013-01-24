@@ -112,18 +112,7 @@
         });
     }];
     
-    // Create Button
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0,0,54,32); // width=54, height=32
-    
-    // Set Button Image
-    UIImage *backButtonImage = [UIImage imageNamed:@"icon_back.png"];
-    [button setBackgroundImage:backButtonImage forState:UIControlStateNormal];
-    
-    // Important: Set Button Action to go back
-    [button addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
-    
-//    self.navigationItem.leftBarButtonItem = button;
+
 }
 
 - (void)didReceiveMemoryWarning

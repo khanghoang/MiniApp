@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* role;
 @property (strong, nonatomic) NSString* imageUrl;
+@property (strong, nonatomic) NSString* mail;
 
 +(MAPerson*)initWithDictionary:(NSDictionary*)dict;
 -(NSArray*)getPropertiesFromPerson;

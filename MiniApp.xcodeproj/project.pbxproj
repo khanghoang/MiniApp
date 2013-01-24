@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		84248ED016B0EE1600169EF2 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248ECE16B0EE1600169EF2 /* icon_back.png */; };
 		84248ED116B0EE1600169EF2 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248ECF16B0EE1600169EF2 /* icon_back@2x.png */; };
+		84248ED916B11AF200169EF2 /* icon_add_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248ED816B11AF200169EF2 /* icon_add_contact.png */; };
+		84248EDB16B11AF800169EF2 /* icon_add_contact@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248EDA16B11AF800169EF2 /* icon_add_contact@2x.png */; };
+		84248EE016B11F5C00169EF2 /* icon_dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248EDC16B11F5A00169EF2 /* icon_dislike.png */; };
+		84248EE116B11F5C00169EF2 /* icon_dislike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248EDD16B11F5A00169EF2 /* icon_dislike@2x.png */; };
+		84248EE216B11F5C00169EF2 /* icon_email.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248EDE16B11F5B00169EF2 /* icon_email.png */; };
+		84248EE316B11F5C00169EF2 /* icon_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248EDF16B11F5B00169EF2 /* icon_email@2x.png */; };
+		84248EE616B124D900169EF2 /* MAStaffDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84248EE516B124D800169EF2 /* MAStaffDetailsCell.m */; };
 		844849F016AE303A00CE40FC /* middle_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EE16AE303A00CE40FC /* middle_button.png */; };
 		844849F116AE303A00CE40FC /* middle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EF16AE303A00CE40FC /* middle_button@2x.png */; };
 		844849FF16AE321900CE40FC /* MACustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844849FE16AE321900CE40FC /* MACustomTabBarViewController.m */; };
@@ -65,6 +72,14 @@
 /* Begin PBXFileReference section */
 		84248ECE16B0EE1600169EF2 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_back.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_back.png"; sourceTree = "<group>"; };
 		84248ECF16B0EE1600169EF2 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_back@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_back@2x.png"; sourceTree = "<group>"; };
+		84248ED816B11AF200169EF2 /* icon_add_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_add_contact.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_add_contact.png"; sourceTree = "<group>"; };
+		84248EDA16B11AF800169EF2 /* icon_add_contact@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_add_contact@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_add_contact@2x.png"; sourceTree = "<group>"; };
+		84248EDC16B11F5A00169EF2 /* icon_dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_dislike.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_dislike.png"; sourceTree = "<group>"; };
+		84248EDD16B11F5A00169EF2 /* icon_dislike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_dislike@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_dislike@2x.png"; sourceTree = "<group>"; };
+		84248EDE16B11F5B00169EF2 /* icon_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_email.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_email.png"; sourceTree = "<group>"; };
+		84248EDF16B11F5B00169EF2 /* icon_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_email@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_email@2x.png"; sourceTree = "<group>"; };
+		84248EE416B124D800169EF2 /* MAStaffDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaffDetailsCell.h; sourceTree = "<group>"; };
+		84248EE516B124D800169EF2 /* MAStaffDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaffDetailsCell.m; sourceTree = "<group>"; };
 		844849EE16AE303A00CE40FC /* middle_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle_button.png; sourceTree = "<group>"; };
 		844849EF16AE303A00CE40FC /* middle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle_button@2x.png"; sourceTree = "<group>"; };
 		844849FD16AE321900CE40FC /* MACustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACustomTabBarViewController.h; sourceTree = "<group>"; };
@@ -164,6 +179,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84248ED716B115D600169EF2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				84248EDC16B11F5A00169EF2 /* icon_dislike.png */,
+				84248EDD16B11F5A00169EF2 /* icon_dislike@2x.png */,
+				84248EDE16B11F5B00169EF2 /* icon_email.png */,
+				84248EDF16B11F5B00169EF2 /* icon_email@2x.png */,
+				84248EDA16B11AF800169EF2 /* icon_add_contact@2x.png */,
+				84248ED816B11AF200169EF2 /* icon_add_contact.png */,
+				8461062E16AE91D50092FE79 /* icon_info_selected@2x.png */,
+				84DE9E9D16AE82C1006C1D57 /* love.png */,
+				844849EE16AE303A00CE40FC /* middle_button.png */,
+				844849EF16AE303A00CE40FC /* middle_button@2x.png */,
+				848ACD0916AE2818003C7993 /* icon_contacts.png */,
+				848ACD0A16AE2818003C7993 /* icon_contacts@2x.png */,
+				848ACD0B16AE2818003C7993 /* icon_info.png */,
+				848ACD0C16AE2818003C7993 /* icon_info@2x.png */,
+				845979BB16AD4BC200791371 /* images 2.jpeg */,
+				845979B516AD44BB00791371 /* tabbar-bg.png */,
+				8459799516AD338300791371 /* customNavigation.png */,
+				84248ECE16B0EE1600169EF2 /* icon_back.png */,
+				84248ECF16B0EE1600169EF2 /* icon_back@2x.png */,
+				8461062B16AE91D50092FE79 /* icon_contacts_selected.png */,
+				8461062C16AE91D50092FE79 /* icon_contacts_selected@2x.png */,
+				8461062D16AE91D50092FE79 /* icon_info_selected.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		84DE9EA416AE89A0006C1D57 /* SVPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,22 +263,7 @@
 		84E4D88E16ACEDA0008568D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84248ECE16B0EE1600169EF2 /* icon_back.png */,
-				84248ECF16B0EE1600169EF2 /* icon_back@2x.png */,
-				8461062B16AE91D50092FE79 /* icon_contacts_selected.png */,
-				8461062C16AE91D50092FE79 /* icon_contacts_selected@2x.png */,
-				8461062D16AE91D50092FE79 /* icon_info_selected.png */,
-				8461062E16AE91D50092FE79 /* icon_info_selected@2x.png */,
-				84DE9E9D16AE82C1006C1D57 /* love.png */,
-				844849EE16AE303A00CE40FC /* middle_button.png */,
-				844849EF16AE303A00CE40FC /* middle_button@2x.png */,
-				848ACD0916AE2818003C7993 /* icon_contacts.png */,
-				848ACD0A16AE2818003C7993 /* icon_contacts@2x.png */,
-				848ACD0B16AE2818003C7993 /* icon_info.png */,
-				848ACD0C16AE2818003C7993 /* icon_info@2x.png */,
-				845979BB16AD4BC200791371 /* images 2.jpeg */,
-				845979B516AD44BB00791371 /* tabbar-bg.png */,
-				8459799516AD338300791371 /* customNavigation.png */,
+				84248ED716B115D600169EF2 /* Images */,
 				84E4D8D216ACF103008568D0 /* MAConstant.h */,
 				84E4D8D316ACF103008568D0 /* MAConstant.m */,
 				84E4D88F16ACEDA0008568D0 /* MiniApp-Info.plist */,
@@ -263,6 +292,8 @@
 				84484A0716AE4BC100CE40FC /* MACustomNavigationBar.m */,
 				84E64B0016AF81EB00AC0487 /* MACustomTabBarItem.h */,
 				84E64B0116AF81EB00AC0487 /* MACustomTabBarItem.m */,
+				84248EE416B124D800169EF2 /* MAStaffDetailsCell.h */,
+				84248EE516B124D800169EF2 /* MAStaffDetailsCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -416,6 +447,12 @@
 				8461063216AE91D50092FE79 /* icon_info_selected@2x.png in Resources */,
 				84248ED016B0EE1600169EF2 /* icon_back.png in Resources */,
 				84248ED116B0EE1600169EF2 /* icon_back@2x.png in Resources */,
+				84248ED916B11AF200169EF2 /* icon_add_contact.png in Resources */,
+				84248EDB16B11AF800169EF2 /* icon_add_contact@2x.png in Resources */,
+				84248EE016B11F5C00169EF2 /* icon_dislike.png in Resources */,
+				84248EE116B11F5C00169EF2 /* icon_dislike@2x.png in Resources */,
+				84248EE216B11F5C00169EF2 /* icon_email.png in Resources */,
+				84248EE316B11F5C00169EF2 /* icon_email@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +490,7 @@
 				84DE9EAB16AE89D5006C1D57 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				84E64B0216AF81EB00AC0487 /* MACustomTabBarItem.m in Sources */,
 				84889D4B16AF9F4800857C44 /* MAStaffDetailsViewController.m in Sources */,
+				84248EE616B124D900169EF2 /* MAStaffDetailsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

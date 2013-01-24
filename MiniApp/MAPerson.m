@@ -2,7 +2,7 @@
 //  MAPerson.m
 //  MiniApp
 //
-//  Created by Trieu Khang on 1/21/13.
+//  Created by ; Khang on 1/21/13.
 //  Copyright (c) 2013 Hoang Trieu Khang. All rights reserved.
 //
 
@@ -17,13 +17,14 @@
     person.name = [dic valueForKey:@"name"];
     person.role = [dic valueForKey:@"role"];
     person.imageUrl = [dic valueForKey:@"image"];
+    person.mail = [dic valueForKey:@"userName"];
     
     return person;
 }
 
 -(NSArray*)getPropertiesFromPerson
 {
-    return [[NSArray alloc]initWithObjects:@"name", @"role" , nil];
+    return [[NSArray alloc]initWithObjects:@"name", @"role" , @"image", @"userName", nil];
 }
 
 @end
