@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* role;
-@property (strong, nonatomic) NSString* image;
+@property (strong, nonatomic) NSString* imageUrl;
 
 +(MAPerson*)initWithDictionary:(NSDictionary*)dict;
 -(NSArray*)getPropertiesFromPerson;

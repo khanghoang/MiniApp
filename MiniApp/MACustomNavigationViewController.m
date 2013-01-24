@@ -37,7 +37,6 @@
     UIGraphicsBeginImageContext(CGSizeMake(320, 40));
     [background setFill];
     UIRectFill(CGRectMake(0, 0, 320, 40));
-    
 }
 
 - (void)didReceiveMemoryWarning

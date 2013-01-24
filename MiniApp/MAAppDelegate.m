@@ -13,6 +13,28 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    
+    UITabBarItem *tabBarInfo = tabBar.items[1];
+    UITabBarItem *tabBarStaff = tabBar.items[0];
+    
+    [tabBarInfo setFinishedSelectedImage:[UIImage imageNamed:@"icon_info_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon_info.png"]];
+    tabBarInfo.titlePositionAdjustment = UIOffsetMake(0, -5);
+    
+    [tabBarStaff setFinishedSelectedImage:[UIImage imageNamed:@"icon_contacts_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon_contacts.png"]];
+    
+    [tabBarStaff setTitlePositionAdjustment:UIOffsetMake(50, 50)];
+    
+    // Set the text appearance for navbar
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], UITextAttributeTextColor,
+      [UIColor redColor], UITextAttributeTextShadowColor,
+      [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+      [UIFont fontWithName:@"Helvetica Neue Bold" size:20], UITextAttributeFont,
+      nil]];
+    
     return YES;
 }
 							

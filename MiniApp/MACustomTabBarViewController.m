@@ -50,13 +50,15 @@
     
     UIColor *background = [[UIColor alloc] initWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)1];
     
-    self.tabBar.shadowImage = nil;
     
     self.tabBar.tintColor = background;
     
     self.tabBar.backgroundColor = background;
     
     self.tabBar.selectedImageTintColor = [UIColor whiteColor];
+    
+    //remove the white gloosy of tabbar
+    [self.tabBar setSelectionIndicatorImage:[[UIImage alloc] init]];
    
 }
 

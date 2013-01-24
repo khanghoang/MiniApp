@@ -111,6 +111,19 @@
             
         });
     }];
+    
+    // Create Button
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0,0,54,32); // width=54, height=32
+    
+    // Set Button Image
+    UIImage *backButtonImage = [UIImage imageNamed:@"icon_back.png"];
+    [button setBackgroundImage:backButtonImage forState:UIControlStateNormal];
+    
+    // Important: Set Button Action to go back
+    [button addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+    
+//    self.navigationItem.leftBarButtonItem = button;
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,17 +166,17 @@
     
     if(!cell)
         cell = [[MAStaffsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    NSLog(@"w%g h%g", cell.imageView.frame.size.width, cell.imageView.frame.size.height);
+    NSLog(@"w%g h%g", cell.avatarImage.frame.size.width, cell.avatarImage.frame.size.height);
 
     // Configure the cell...
     cell.textName.text = [[self.listStaffs objectAtIndex:indexPath.row] name];
     cell.textName.textColor = [UIColor blackColor];
     cell.textRole.text = [[self.listStaffs objectAtIndex:indexPath.row] role];
     
-    [cell.imageView setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] image]] placeholderImage:[UIImage imageNamed:@"images 2.jpeg"]];
+    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"images 2.jpeg"]];
     
-    cell.imageView.layer.cornerRadius = 23;
-    cell.imageView.clipsToBounds = YES;
+    cell.avatarImage.layer.cornerRadius = 22;
+    cell.avatarImage.clipsToBounds = YES;
     
     cell.starImage.hidden = YES;
     
@@ -263,7 +276,7 @@
         
         [segue.destinationViewController setPerson:[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row]];
         
-        //[self.tableView reloadData];
+        [self.tableView reloadData];
     }
 }
 

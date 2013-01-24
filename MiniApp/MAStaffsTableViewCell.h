@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *textRole;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;
 

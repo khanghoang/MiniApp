@@ -22,10 +22,13 @@
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
+ */
+
+//remove the shadow and glossy
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
 }
-*/
+
 
 @end

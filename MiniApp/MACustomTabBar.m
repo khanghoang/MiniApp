@@ -24,6 +24,7 @@
 // An empty implementation adversely affects performance during animation.
  */
 
+//remove the shadow and glossy
 - (void)drawRect:(CGRect)rect {
 
 }

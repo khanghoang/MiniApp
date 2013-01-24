@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84248ED016B0EE1600169EF2 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248ECE16B0EE1600169EF2 /* icon_back.png */; };
+		84248ED116B0EE1600169EF2 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248ECF16B0EE1600169EF2 /* icon_back@2x.png */; };
 		844849F016AE303A00CE40FC /* middle_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EE16AE303A00CE40FC /* middle_button.png */; };
 		844849F116AE303A00CE40FC /* middle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EF16AE303A00CE40FC /* middle_button@2x.png */; };
 		844849FF16AE321900CE40FC /* MACustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844849FE16AE321900CE40FC /* MACustomTabBarViewController.m */; };
@@ -61,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84248ECE16B0EE1600169EF2 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_back.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_back.png"; sourceTree = "<group>"; };
+		84248ECF16B0EE1600169EF2 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_back@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_back@2x.png"; sourceTree = "<group>"; };
 		844849EE16AE303A00CE40FC /* middle_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle_button.png; sourceTree = "<group>"; };
 		844849EF16AE303A00CE40FC /* middle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle_button@2x.png"; sourceTree = "<group>"; };
 		844849FD16AE321900CE40FC /* MACustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACustomTabBarViewController.h; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 		84E4D88E16ACEDA0008568D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84248ECE16B0EE1600169EF2 /* icon_back.png */,
+				84248ECF16B0EE1600169EF2 /* icon_back@2x.png */,
 				8461062B16AE91D50092FE79 /* icon_contacts_selected.png */,
 				8461062C16AE91D50092FE79 /* icon_contacts_selected@2x.png */,
 				8461062D16AE91D50092FE79 /* icon_info_selected.png */,
@@ -408,6 +414,8 @@
 				8461063016AE91D50092FE79 /* icon_contacts_selected@2x.png in Resources */,
 				8461063116AE91D50092FE79 /* icon_info_selected.png in Resources */,
 				8461063216AE91D50092FE79 /* icon_info_selected@2x.png in Resources */,
+				84248ED016B0EE1600169EF2 /* icon_back.png in Resources */,
+				84248ED116B0EE1600169EF2 /* icon_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
