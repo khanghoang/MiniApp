@@ -58,7 +58,6 @@
              [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                  //for each element;
                  [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-                 //             NSLog(@"%@", [[MAPerson initWithDictionary:obj] name]);
              }];
              
              //refresh table
@@ -155,7 +154,7 @@
     
     if(!cell)
         cell = [[MAStaffsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    NSLog(@"w%g h%g", cell.avatarImage.frame.size.width, cell.avatarImage.frame.size.height);
+//    NSLog(@"w%g h%g", cell.avatarImage.frame.size.width, cell.avatarImage.frame.size.height);
 
     // Configure the cell...
     cell.textName.text = [[self.listStaffs objectAtIndex:indexPath.row] name];
@@ -166,6 +165,9 @@
     
     cell.avatarImage.layer.cornerRadius = 22;
     cell.avatarImage.clipsToBounds = YES;
+    
+    cell.avatarImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.avatarImage.layer.borderWidth = 3;
     
     cell.starImage.hidden = YES;
     
@@ -215,7 +217,7 @@
     //set back to data
     [data setObject:archived forKey:@"Top Hit"];
     
-    NSLog(@"Hit count of %@ = %@", personName, [topHit objectForKey:personName]);
+//    NSLog(@"Hit count of %@ = %@", personName, [topHit objectForKey:personName]);
     
     [data synchronize];
     
@@ -261,7 +263,7 @@
     if([segue.identifier isEqualToString:@"Show staff details"])
     {
         [self increaseHitOf:[[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row] name]];
-        NSLog(@"Most famous = %@", [self getNumberOfTheMostFamous]);
+//        NSLog(@"Most famous = %@", [self getNumberOfTheMostFamous]);
         
         [segue.destinationViewController setPerson:[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row]];
         

@@ -22,6 +22,7 @@
 		843BE9B616B14A1B004D657A /* icon_sms@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9B416B14A1B004D657A /* icon_sms@2x.png */; };
 		843BE9B916B14A79004D657A /* icon_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9B716B14A79004D657A /* icon_like.png */; };
 		843BE9BA16B14A79004D657A /* icon_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9B816B14A79004D657A /* icon_like@2x.png */; };
+		843E01BF16B2418F00287441 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843E01BE16B2418F00287441 /* MessageUI.framework */; };
 		844849F016AE303A00CE40FC /* middle_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EE16AE303A00CE40FC /* middle_button.png */; };
 		844849F116AE303A00CE40FC /* middle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EF16AE303A00CE40FC /* middle_button@2x.png */; };
 		844849FF16AE321900CE40FC /* MACustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844849FE16AE321900CE40FC /* MACustomTabBarViewController.m */; };
@@ -92,6 +93,7 @@
 		843BE9B416B14A1B004D657A /* icon_sms@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_sms@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_sms@2x.png"; sourceTree = "<group>"; };
 		843BE9B716B14A79004D657A /* icon_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_like.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_like.png"; sourceTree = "<group>"; };
 		843BE9B816B14A79004D657A /* icon_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_like@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_like@2x.png"; sourceTree = "<group>"; };
+		843E01BE16B2418F00287441 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		844849EE16AE303A00CE40FC /* middle_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle_button.png; sourceTree = "<group>"; };
 		844849EF16AE303A00CE40FC /* middle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle_button@2x.png"; sourceTree = "<group>"; };
 		844849FD16AE321900CE40FC /* MACustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACustomTabBarViewController.h; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843E01BF16B2418F00287441 /* MessageUI.framework in Frameworks */,
 				84DE9EAE16AE8BF4006C1D57 /* QuartzCore.framework in Frameworks */,
 				84E4D88816ACEDA0008568D0 /* UIKit.framework in Frameworks */,
 				84E4D88A16ACEDA0008568D0 /* Foundation.framework in Frameworks */,
@@ -241,6 +244,7 @@
 		84E4D87816ACEDA0008568D0 = {
 			isa = PBXGroup;
 			children = (
+				843E01BE16B2418F00287441 /* MessageUI.framework */,
 				84DE9EAD16AE8BF3006C1D57 /* QuartzCore.framework */,
 				84E4D88D16ACEDA0008568D0 /* MiniApp */,
 				84E4D88616ACEDA0008568D0 /* Frameworks */,

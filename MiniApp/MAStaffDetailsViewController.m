@@ -11,9 +11,11 @@
 #import "MAPerson.h"
 #import "MAStaffDetailsCell.h"
 #import "AFNetworking.h"
+#import "MACustomNavigationBar.h"
 #import <QuartzCore/QuartzCore.h>
+#import <MessageUI/MessageUI.h>
 
-@interface MAStaffDetailsViewController ()
+@interface MAStaffDetailsViewController () <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @end
 
@@ -131,6 +133,8 @@
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"Mail" forIndexPath:indexPath];
             cell.leftDetail.text = self.person.mail;
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnMail:)];
+            [cell.leftDetail addGestureRecognizer:tapGesture];
         }
             break;
         case 2:
@@ -143,6 +147,8 @@
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"Like" forIndexPath:indexPath];
             cell.leftDetail.text = self.person.like;
+            cell.leftDetail.numberOfLines = 0;
+            [cell.leftDetail sizeToFit];
             
         }
         case 4:
@@ -156,6 +162,9 @@
             break;
     }
     
+    if(!cell.leftDetail.text)
+        cell.hidden = YES;
+    
     cell.leftDetail.numberOfLines = 0;
     [cell.leftDetail sizeToFit];
     
@@ -163,6 +172,47 @@
     // Configure the cell...
     
     return cell;
+}
+
+-(void)tapOnMail:(id)sender
+{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        
+        mailer.mailComposeDelegate = self;
+        [mailer setSubject: [NSString stringWithFormat:@"Say something to %@", self.person.name]];
+        
+        NSArray *toRecipients = [NSArray arrayWithObjects:self.person.mail ,nil];
+        [mailer setToRecipients:toRecipients];
+        
+        // Add attach files
+//        UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
+//        NSData *imageData = UIImagePNGRepresentation(myImage);
+//        [mailer addAttachmentData:imageData mimeType:@"image/png" fileName:@"mobiletutsImage"];
+        
+        NSString *emailBody = @"Say blah blah";
+        [mailer setMessageBody:emailBody isHTML:NO];
+        
+        mailer.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:(UIViewController *)mailer animated:YES completion:nil];
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                        message:@"Your device doesn't support the composer sheet"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        [alert show];
+    }
+}
+
+// When Cancel or something
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -184,11 +234,11 @@
                 cellText = self.person.phone;
             }
             break;
-        case 4:
+        case 3:
             {
                 cellText = self.person.like;
             }
-        case 5:
+        case 4:
             {
                 cellText = self.person.dislike;
             }
@@ -204,13 +254,14 @@
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByCharWrapping];
     
     //if it's the Name and Role
-    if (labelSize.height < 80 && indexPath.row == 0) {
+    if (indexPath.row == 0 && labelSize.height < 80) {
         return 80;
     }
     
-    return labelSize.height + 40;
+    if( !cellText )
+        return 0;
     
-    //    return 100;
+    return labelSize.height + 20;
 }
 
 /*
