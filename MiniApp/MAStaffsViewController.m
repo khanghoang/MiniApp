@@ -55,6 +55,9 @@
              
              NSArray* temp = (NSArray*) JSON;
              
+             // Clear all for refresh
+             [self.listStaffs removeAllObjects];
+             
              [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                  //for each element;
                  [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
@@ -66,7 +69,10 @@
          }
          failure:^(NSError *error) {
              //do something
-             NSLog(@"%@", @"Connection Error");
+//             NSLog(@"%@", @"Connection Error");
+             UIAlertView* errorConnection = [[UIAlertView alloc]initWithTitle:@"Connection Error" message:@"Connect and try again :)" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles:nil];
+             
+             [errorConnection show];
          }];
     
     
@@ -83,8 +89,12 @@
                 [AMDownloader getDataFromURL:STAFF_DETAILS_URL
                      success:^(id JSON) {
                          
+                         // Clear all for refresh
+                         [self.listStaffs removeAllObjects];
+                         
                          //do something when success
                          NSArray* temp = (NSArray*) JSON;
+                         
                          
                          [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                              //for each element;
@@ -100,7 +110,10 @@
                      }
                      failure:^(NSError *error) {
                          //do something
-                         NSLog(@"%@", @"Connection Error");
+//                         NSLog(@"%@", @"Connection Error");
+                         UIAlertView* errorConnection = [[UIAlertView alloc]initWithTitle:@"Connection Error" message:@"Connect and try again :)" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles:nil];
+                         
+                         [errorConnection show];
                      }];
                 
                 
