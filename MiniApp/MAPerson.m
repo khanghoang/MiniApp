@@ -18,6 +18,9 @@
     person.role = [dic valueForKey:@"role"];
     person.imageUrl = [dic valueForKey:@"image"];
     person.mail = [dic valueForKey:@"userName"];
+    person.phone = [dic valueForKey:@"contact"];
+    person.like = [dic valueForKey:@"like"];
+    person.dislike = [dic valueForKey:@"dislike"];
     
     return person;
 }

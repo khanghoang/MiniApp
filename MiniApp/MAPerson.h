@@ -14,6 +14,9 @@
 @property (strong, nonatomic) NSString* role;
 @property (strong, nonatomic) NSString* imageUrl;
 @property (strong, nonatomic) NSString* mail;
+@property (strong, nonatomic) NSString* phone;
+@property (strong, nonatomic) NSString* like;
+@property (strong, nonatomic) NSString* dislike;
 
 +(MAPerson*)initWithDictionary:(NSDictionary*)dict;
 -(NSArray*)getPropertiesFromPerson;

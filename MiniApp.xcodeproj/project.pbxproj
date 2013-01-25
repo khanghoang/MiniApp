@@ -16,6 +16,12 @@
 		84248EE216B11F5C00169EF2 /* icon_email.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248EDE16B11F5B00169EF2 /* icon_email.png */; };
 		84248EE316B11F5C00169EF2 /* icon_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84248EDF16B11F5B00169EF2 /* icon_email@2x.png */; };
 		84248EE616B124D900169EF2 /* MAStaffDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84248EE516B124D800169EF2 /* MAStaffDetailsCell.m */; };
+		843BE9B016B14A0B004D657A /* icon_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9AE16B14A0B004D657A /* icon_profile.png */; };
+		843BE9B116B14A0B004D657A /* icon_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9AF16B14A0B004D657A /* icon_profile@2x.png */; };
+		843BE9B516B14A1B004D657A /* icon_sms.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9B316B14A1B004D657A /* icon_sms.png */; };
+		843BE9B616B14A1B004D657A /* icon_sms@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9B416B14A1B004D657A /* icon_sms@2x.png */; };
+		843BE9B916B14A79004D657A /* icon_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9B716B14A79004D657A /* icon_like.png */; };
+		843BE9BA16B14A79004D657A /* icon_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843BE9B816B14A79004D657A /* icon_like@2x.png */; };
 		844849F016AE303A00CE40FC /* middle_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EE16AE303A00CE40FC /* middle_button.png */; };
 		844849F116AE303A00CE40FC /* middle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844849EF16AE303A00CE40FC /* middle_button@2x.png */; };
 		844849FF16AE321900CE40FC /* MACustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844849FE16AE321900CE40FC /* MACustomTabBarViewController.m */; };
@@ -80,6 +86,12 @@
 		84248EDF16B11F5B00169EF2 /* icon_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_email@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_email@2x.png"; sourceTree = "<group>"; };
 		84248EE416B124D800169EF2 /* MAStaffDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaffDetailsCell.h; sourceTree = "<group>"; };
 		84248EE516B124D800169EF2 /* MAStaffDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaffDetailsCell.m; sourceTree = "<group>"; };
+		843BE9AE16B14A0B004D657A /* icon_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_profile.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_profile.png"; sourceTree = "<group>"; };
+		843BE9AF16B14A0B004D657A /* icon_profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_profile@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_profile@2x.png"; sourceTree = "<group>"; };
+		843BE9B316B14A1B004D657A /* icon_sms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_sms.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_sms.png"; sourceTree = "<group>"; };
+		843BE9B416B14A1B004D657A /* icon_sms@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_sms@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_sms@2x.png"; sourceTree = "<group>"; };
+		843BE9B716B14A79004D657A /* icon_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_like.png; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_like.png"; sourceTree = "<group>"; };
+		843BE9B816B14A79004D657A /* icon_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_like@2x.png"; path = "../../../Dropbox/MiniEvalApp/6. UI/Slices/icon_like@2x.png"; sourceTree = "<group>"; };
 		844849EE16AE303A00CE40FC /* middle_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle_button.png; sourceTree = "<group>"; };
 		844849EF16AE303A00CE40FC /* middle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle_button@2x.png"; sourceTree = "<group>"; };
 		844849FD16AE321900CE40FC /* MACustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACustomTabBarViewController.h; sourceTree = "<group>"; };
@@ -182,6 +194,12 @@
 		84248ED716B115D600169EF2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				843BE9B716B14A79004D657A /* icon_like.png */,
+				843BE9B816B14A79004D657A /* icon_like@2x.png */,
+				843BE9B316B14A1B004D657A /* icon_sms.png */,
+				843BE9B416B14A1B004D657A /* icon_sms@2x.png */,
+				843BE9AE16B14A0B004D657A /* icon_profile.png */,
+				843BE9AF16B14A0B004D657A /* icon_profile@2x.png */,
 				84248EDC16B11F5A00169EF2 /* icon_dislike.png */,
 				84248EDD16B11F5A00169EF2 /* icon_dislike@2x.png */,
 				84248EDE16B11F5B00169EF2 /* icon_email.png */,
@@ -453,6 +471,12 @@
 				84248EE116B11F5C00169EF2 /* icon_dislike@2x.png in Resources */,
 				84248EE216B11F5C00169EF2 /* icon_email.png in Resources */,
 				84248EE316B11F5C00169EF2 /* icon_email@2x.png in Resources */,
+				843BE9B016B14A0B004D657A /* icon_profile.png in Resources */,
+				843BE9B116B14A0B004D657A /* icon_profile@2x.png in Resources */,
+				843BE9B516B14A1B004D657A /* icon_sms.png in Resources */,
+				843BE9B616B14A1B004D657A /* icon_sms@2x.png in Resources */,
+				843BE9B916B14A79004D657A /* icon_like.png in Resources */,
+				843BE9BA16B14A79004D657A /* icon_like@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

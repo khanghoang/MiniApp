@@ -103,9 +103,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-//    return [[self.person getPropertiesFromPerson]count];
-    return 1;
+    // Return the number of rows in the sec®tion.
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,25 +114,103 @@
     switch (indexPath.row) {
         case 0:
             {
-            // Is name
                 cell = [tableView dequeueReusableCellWithIdentifier:@"Name" forIndexPath:indexPath];
-                [cell.rightImage setImageWithURL:[NSURL URLWithString:self.person.imageUrl] placeholderImage:@"image 2.jpeg"];
+                if (self.person.imageUrl) {
+                    [cell.rightImage setImageWithURL:[NSURL URLWithString:self.person.imageUrl] placeholderImage:([UIImage imageNamed:@"images 2.jpeg"])];
+                }else{
+                    UIImage *image = [UIImage imageNamed:@"images 2.jpeg"];
+                    [cell.rightImage setImage:image];
+                }
                 
                 cell.rightImage.layer.cornerRadius = cell.rightImage.frame.size.width / 2;
                 cell.rightImage.clipsToBounds = YES;
-                
                 cell.leftDetail.text = self.person.role;
-                cell.leftDetail.numberOfLines = 0;                
             }
+            break;
+        case 1:
+        {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"Mail" forIndexPath:indexPath];
+            cell.leftDetail.text = self.person.mail;
+        }
+            break;
+        case 2:
+        {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"SMS" forIndexPath:indexPath];
+            cell.leftDetail.text = self.person.phone;
+        }
+            break;
+        case 3:
+        {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"Like" forIndexPath:indexPath];
+            cell.leftDetail.text = self.person.like;
+            
+        }
+        case 4:
+        {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"Dislike" forIndexPath:indexPath];
+            cell.leftDetail.text = self.person.dislike;
+            
+        }
             break;
         default:
             break;
     }
     
+    cell.leftDetail.numberOfLines = 0;
+    [cell.leftDetail sizeToFit];
+    
     
     // Configure the cell...
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *cellText = @"";
+    switch (indexPath.row) {
+        case 0:
+            {
+                cellText = self.person.role;
+            }
+            break;
+        case 1:
+            {
+                cellText = self.person.mail;
+            }
+            break;
+        case 2:
+            {
+                cellText = self.person.phone;
+            }
+            break;
+        case 4:
+            {
+                cellText = self.person.like;
+            }
+        case 5:
+            {
+                cellText = self.person.dislike;
+            }
+            break;
+            
+        default:
+            break;
+    }
+    
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:14.0];
+    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+    
+    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByCharWrapping];
+    
+    //if it's the Name and Role
+    if (labelSize.height < 80 && indexPath.row == 0) {
+        return 80;
+    }
+    
+    return labelSize.height + 40;
+    
+    //    return 100;
 }
 
 /*
