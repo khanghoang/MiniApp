@@ -14,8 +14,9 @@
 #import "MACustomNavigationBar.h"
 #import <QuartzCore/QuartzCore.h>
 #import <MessageUI/MessageUI.h>
+#import <AddressBook/AddressBook.h>
 
-@interface MAStaffDetailsViewController () <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
+@interface MAStaffDetailsViewController () <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -95,11 +96,91 @@
     return 1;
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+    NSLog(@"Alert View dismissed with button at index %d",buttonIndex);
+    
+    // If button "OK" pressed
+    if (buttonIndex == 1) {
+        if ([self.person isKindOfClass:[MAPerson class]]) {
+            // Do add to address book here
+            ABRecordRef aRecord = ABPersonCreate();
+            CFErrorRef  anError = NULL;
+            
+            ABRecordSetValue(aRecord, kABPersonFirstNameProperty, (__bridge CFTypeRef)(self.person.name), &anError);
+            ABRecordSetValue(aRecord, kABPersonLastNameProperty, (__bridge CFTypeRef)(self.person.name), &anError);
+            
+            // Add mail
+            if(self.person.mail)
+            {
+                ABMutableMultiValueRef multiemail = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+                ABMultiValueAddValueAndLabel(multiemail, (__bridge CFStringRef)self.person.mail, kABWorkLabel, NULL);
+                ABRecordSetValue(aRecord, kABPersonEmailProperty, multiemail, &anError);
+            }
+            
+            // Add phone
+            if(self.person.phone)
+            {
+                ABMutableMultiValueRef multi = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+                ABMultiValueAddValueAndLabel(multi, (__bridge CFStringRef)self.person.phone, kABWorkLabel, NULL);
+                ABRecordSetValue(aRecord, kABPersonPhoneProperty, multi, &anError);
+            }
+            
+            if (anError != NULL) {
+                NSLog(@"error while creating..");
+            }
+            
+            CFStringRef firstName, lastName;
+            firstName = ABRecordCopyValue(aRecord, kABPersonFirstNameProperty);
+            lastName  = ABRecordCopyValue(aRecord, kABPersonLastNameProperty);
+            
+            ABAddressBookRef addressBook;
+            CFErrorRef error = NULL;
+            addressBook = ABAddressBookCreate();
+            
+            BOOL isAdded = ABAddressBookAddRecord (addressBook, aRecord, &error);
+            
+            if(isAdded){
+                
+//                NSLog(@"added..");
+            }
+            if (error != NULL) {
+                NSLog(@"ABAddressBookAddRecord %@", error);
+            }
+            error = NULL;
+            
+            BOOL isSaved = ABAddressBookSave (addressBook, &error);
+            
+            if(isSaved){
+//                NSLog(@"saved..");
+            }
+            
+            if (error != NULL) {
+                NSLog(@"ABAddressBookSave %@", error);
+            }
+            // Success
+            else
+            {
+                UIAlertView* successAlert = [[UIAlertView alloc] initWithTitle:@"Added !" message:@"Contact added successfully" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles: nil];
+                
+                [successAlert show];
+            }
+            
+        }
+    }
+    
+}
+
 -(void)addedToContact:(id)person
 {
-    if ([self.person isKindOfClass:[MAPerson class]]) {
-        // Do add to address book here
-    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure ?"
+                                                    message:[NSString stringWithFormat: @"Are you sure to add %@ to Address Book.", self.person.name]
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Ok", nil];
+    [alert show];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -141,6 +222,11 @@
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"SMS" forIndexPath:indexPath];
             cell.leftDetail.text = self.person.phone;
+            
+            UITapGestureRecognizer *tapOnSMS = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnSMS:)];
+            
+            // Add to label
+            [cell.leftDetail addGestureRecognizer:tapOnSMS];
         }
             break;
         case 3:
@@ -174,6 +260,21 @@
     return cell;
 }
 
+// Action when User tap on SMS
+-(void)tapOnSMS:(id)sender
+{
+    // Set delegate
+    MFMessageComposeViewController* sms = [[MFMessageComposeViewController alloc]init];
+    sms.messageComposeDelegate = self;
+    
+    // If devices can send text
+    if([MFMessageComposeViewController canSendText])
+    {
+        NSLog(@"Devices can send text");
+    }
+}
+
+// Action when User tap on mail address
 -(void)tapOnMail:(id)sender
 {
     if ([MFMailComposeViewController canSendMail])
@@ -195,12 +296,14 @@
         [mailer setMessageBody:emailBody isHTML:NO];
         
         mailer.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self presentViewController:(UIViewController *)mailer animated:YES completion:nil];
-        
+        [self presentViewController:(UIViewController *)mailer animated:YES completion:^(void){
+            NSLog(@"Complete mail");
+        }];
     }
     else
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+           
                                                         message:@"Your device doesn't support the composer sheet"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
@@ -212,7 +315,8 @@
 // When Cancel or something
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    [controller dismissViewControllerAnimated:NO completion:nil];
+    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

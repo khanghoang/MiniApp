@@ -37,6 +37,7 @@
 		8461063016AE91D50092FE79 /* icon_contacts_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461062C16AE91D50092FE79 /* icon_contacts_selected@2x.png */; };
 		8461063116AE91D50092FE79 /* icon_info_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461062D16AE91D50092FE79 /* icon_info_selected.png */; };
 		8461063216AE91D50092FE79 /* icon_info_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8461062E16AE91D50092FE79 /* icon_info_selected@2x.png */; };
+		846B78BB16B26A4D0021AAA2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846B78BA16B26A4D0021AAA2 /* AddressBook.framework */; };
 		84889D4B16AF9F4800857C44 /* MAStaffDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84889D4A16AF9F4800857C44 /* MAStaffDetailsViewController.m */; };
 		848ACD0D16AE2818003C7993 /* icon_contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ACD0916AE2818003C7993 /* icon_contacts.png */; };
 		848ACD0E16AE2818003C7993 /* icon_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ACD0A16AE2818003C7993 /* icon_contacts@2x.png */; };
@@ -113,6 +114,7 @@
 		8461062C16AE91D50092FE79 /* icon_contacts_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_contacts_selected@2x.png"; path = "../../../Downloads/selected_icons/icon_contacts_selected@2x.png"; sourceTree = "<group>"; };
 		8461062D16AE91D50092FE79 /* icon_info_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_info_selected.png; path = ../../../Downloads/selected_icons/icon_info_selected.png; sourceTree = "<group>"; };
 		8461062E16AE91D50092FE79 /* icon_info_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_info_selected@2x.png"; path = "../../../Downloads/selected_icons/icon_info_selected@2x.png"; sourceTree = "<group>"; };
+		846B78BA16B26A4D0021AAA2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		84889D4916AF9F4800857C44 /* MAStaffDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaffDetailsViewController.h; sourceTree = "<group>"; };
 		84889D4A16AF9F4800857C44 /* MAStaffDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaffDetailsViewController.m; sourceTree = "<group>"; };
 		848ACD0916AE2818003C7993 /* icon_contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_contacts.png; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846B78BB16B26A4D0021AAA2 /* AddressBook.framework in Frameworks */,
 				843E01BF16B2418F00287441 /* MessageUI.framework in Frameworks */,
 				84DE9EAE16AE8BF4006C1D57 /* QuartzCore.framework in Frameworks */,
 				84E4D88816ACEDA0008568D0 /* UIKit.framework in Frameworks */,
@@ -244,6 +247,7 @@
 		84E4D87816ACEDA0008568D0 = {
 			isa = PBXGroup;
 			children = (
+				846B78BA16B26A4D0021AAA2 /* AddressBook.framework */,
 				843E01BE16B2418F00287441 /* MessageUI.framework */,
 				84DE9EAD16AE8BF3006C1D57 /* QuartzCore.framework */,
 				84E4D88D16ACEDA0008568D0 /* MiniApp */,

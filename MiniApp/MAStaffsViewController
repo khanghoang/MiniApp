@@ -182,9 +182,9 @@
     
     // Male and Female
     if([[[[self.listStaffs objectAtIndex:indexPath.row] gender] uppercaseString] isEqualToString:@"MALE"])
-        cell.textName.textColor = [UIColor orangeColor];
-    else
         cell.textName.textColor = [UIColor blueColor];
+    else
+        cell.textName.textColor = [UIColor orangeColor];
     
     return cell;
 }

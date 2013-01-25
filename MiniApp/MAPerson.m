@@ -21,6 +21,7 @@
     person.phone = [dic valueForKey:@"contact"];
     person.like = [dic valueForKey:@"like"];
     person.dislike = [dic valueForKey:@"dislike"];
+    person.gender = [dic valueForKey:@"gender"];
     
     return person;
 }

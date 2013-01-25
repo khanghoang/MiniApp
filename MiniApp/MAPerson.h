@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString* phone;
 @property (strong, nonatomic) NSString* like;
 @property (strong, nonatomic) NSString* dislike;
+@property (strong, nonatomic) NSString* gender;
 
 +(MAPerson*)initWithDictionary:(NSDictionary*)dict;
 -(NSArray*)getPropertiesFromPerson;
