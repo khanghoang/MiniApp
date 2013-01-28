@@ -162,7 +162,8 @@
     
     if(!cell)
         cell = [[MAStaffsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    
+
+    cell.delegate = self;
     // Configure the cell...
 //    cell.textName.text = [[self.listStaffs objectAtIndex:indexPath.row] name];
 //    cell.textName.textColor = [UIColor blackColor];
@@ -232,6 +233,7 @@
 
 - (NSNumber*)getNumberOfTheMostFamous
 {
+    
     NSNumber* top = 0;
     
     __block int intTop = [top integerValue];

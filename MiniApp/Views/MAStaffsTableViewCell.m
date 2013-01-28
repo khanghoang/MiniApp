@@ -9,6 +9,18 @@
 #import "MAStaffsTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface MAStaffsTableViewCell()
+
+@property (weak, nonatomic) IBOutlet UILabel *textName;
+
+@property (weak, nonatomic) IBOutlet UILabel *textRole;
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *starImage;
+
+@end
+
 @implementation MAStaffsTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -44,11 +56,11 @@
     
     self.starImage.hidden = YES;
     
-//    if([[self.delegate getNumberOfTheMostFamous] integerValue] == [[self.delegate getNumberOfName:staff.name] integerValue])
-//    {
-////        self.textName.textColor = [UIColor orangeColor];
-//        self.starImage.hidden = NO;
-//    }
+    if([[self.delegate getNumberOfTheMostFamous] integerValue] == [[self.delegate getNumberOfName:staff.name] integerValue])
+    {
+//        self.textName.textColor = [UIColor orangeColor];
+        self.starImage.hidden = NO;
+    }
     
     // Male and Female
     if([[staff.gender uppercaseString] isEqualToString:@"MALE"])

@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MiniApp/Controllers/MAStaffsViewController.m"
-         timestampString = "381056051.920011"
+         timestampString = "381058840.877357"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165"
+         startingLineNumber = "164"
+         endingLineNumber = "164"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,13 +229,39 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MiniApp/Views/MAStaffsTableViewCell.m"
-         timestampString = "381055887.503907"
+         timestampString = "381058840.877357"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "12"
-         endingLineNumber = "12"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
          landmarkName = "@implementation MAStaffsTableViewCell"
          landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MiniApp/Views/MAStaffsTableViewCell.m"
+         timestampString = "381058840.877357"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
+         landmarkName = "-initStaffTableViewCellWith:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MiniApp/Views/MAStaffsTableViewCell.m"
+         timestampString = "381058840.877357"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-initStaffTableViewCellWith:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

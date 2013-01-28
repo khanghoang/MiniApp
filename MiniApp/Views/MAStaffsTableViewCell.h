@@ -21,14 +21,6 @@
 
 @property (nonatomic, assign) NSObject<StaffsTableViewCell>* delegate;
 
-@property (weak, nonatomic) IBOutlet UILabel *textName;
-
-@property (weak, nonatomic) IBOutlet UILabel *textRole;
-
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
-
-@property (weak, nonatomic) IBOutlet UIImageView *starImage;
-
 - (MAStaffsTableViewCell*)initStaffTableViewCellWith:(MAPerson*)staff;
 
 @end
