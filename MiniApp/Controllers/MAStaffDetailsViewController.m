@@ -45,12 +45,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // Create Back Button
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -263,9 +257,6 @@
     cell.leftDetail.numberOfLines = 0;
     [cell.leftDetail sizeToFit];
     
-    
-    // Configure the cell...
-    
     return cell;
 }
 
@@ -328,8 +319,8 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     NSString *cellText = @"";
     switch (indexPath.row) {
         case 0:

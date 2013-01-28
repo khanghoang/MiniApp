@@ -22,13 +22,6 @@
 
 @implementation MAStaffsViewController
 
--(NSMutableArray*)listStaffs
-{
-    if(!_listStaffs)
-        _listStaffs = [[NSMutableArray alloc]init];
-    return _listStaffs;
-}
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -44,6 +37,12 @@
     [self getStaffList];
 }
 
+- (void)displayStaffList
+{
+    [self getStaffList];
+    [self pullToRefresh];
+}
+
 - (void)getStaffList
 {
     //get data
@@ -55,6 +54,7 @@
                              
                              NSArray* temp = (NSArray*) JSON;
                              
+                             self.listStaffs = [NSMutableArray array];
                              // Clear all for refresh
                              [self.listStaffs removeAllObjects];
                              
@@ -64,7 +64,16 @@
                              }];
                              
                              //refresh table
-                             [self.tableView reloadData];
+                             /* Animate the table view reload */
+                             [UIView transitionWithView: self.tableView
+                                               duration: 0.35f
+                                                options: UIViewAnimationOptionTransitionCrossDissolve
+                                             animations: ^(void)
+                                                          {
+                                                              [self.tableView reloadData];
+                                                          }
+                                             completion: ^(BOOL isFinished){}
+                              ];
                              
                          }
                          failure:^(NSError *error) {
@@ -74,8 +83,10 @@
                              
                              [errorConnection show];
                          }];
-    
-    
+}
+
+- (void)pullToRefresh
+{
     __weak MAStaffsViewController *weakSelf = self;
     
     // setup pull-to-refresh
@@ -89,6 +100,7 @@
                 [AMDownloader getDataFromURL:STAFF_DETAILS_URL
                                      success:^(id JSON) {
                                          
+                                         self.listStaffs = [NSMutableArray array];
                                          // Clear all for refresh
                                          [self.listStaffs removeAllObjects];
                                          
@@ -123,6 +135,7 @@
             
         });
     }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -158,34 +171,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    MAStaffsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    MAStaffsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if(!cell)
         cell = [[MAStaffsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 
     cell.delegate = self;
-    // Configure the cell...
-//    cell.textName.text = [[self.listStaffs objectAtIndex:indexPath.row] name];
-//    cell.textName.textColor = [UIColor blackColor];
-//    cell.textRole.text = [[self.listStaffs objectAtIndex:indexPath.row] role];
-//    
-//    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"icon_profile.png"]];
-//    
-//    cell.avatarImage.layer.cornerRadius = 30;
-//    cell.avatarImage.clipsToBounds = YES;
-//    
-//    cell.avatarImage.layer.borderColor = [UIColor whiteColor].CGColor;
-//    cell.avatarImage.layer.borderWidth = 3;
-//    
-//    cell.starImage.hidden = YES;
-//    
-//
-//    // Male and Female
-//    if([[[[self.listStaffs objectAtIndex:indexPath.row] gender] uppercaseString] isEqualToString:@"MALE"])
-//        cell.textName.textColor = [UIColor orangeColor];
-//    else
-//        cell.textName.textColor = [UIColor blueColor];
-
     
     return [cell initStaffTableViewCellWith:[self.listStaffs objectAtIndex:indexPath.row]];
 }
