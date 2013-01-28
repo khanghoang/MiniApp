@@ -29,4 +29,11 @@
 
 }
 
+- (IBAction)infoSelected:(id)sender {
+    NSLog(@"Info selected");
+}
+
+- (IBAction)contactSelected:(id)sender {
+    NSLog(@"Contact selected");
+}
 @end

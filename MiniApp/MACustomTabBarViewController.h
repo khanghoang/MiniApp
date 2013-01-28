@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MACustomTabBar.h"
 
-@interface MACustomTabBarViewController : UITabBarController
+@interface MACustomTabBarViewController : UITabBarController <MACustomTabBarDelegate>
 
 @property (weak, nonatomic) IBOutlet MACustomTabBar *tabBar;
 

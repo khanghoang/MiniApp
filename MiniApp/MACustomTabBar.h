@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MACustomTabBar : UITabBar
+@protocol MACustomTabBarDelegate <NSObject>
+
+-(void)tabSelected:(NSInteger)tabIndex;
+
+@end
+
+@interface MACustomTabBar : UIView
+
+@property (nonatomic, assign) NSObject<MACustomTabBarDelegate>* delegate;
+
+@property (weak, nonatomic) IBOutlet UIButton *contactButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 @end

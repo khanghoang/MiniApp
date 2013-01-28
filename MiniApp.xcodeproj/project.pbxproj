@@ -43,6 +43,7 @@
 		848ACD0E16AE2818003C7993 /* icon_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ACD0A16AE2818003C7993 /* icon_contacts@2x.png */; };
 		848ACD0F16AE2818003C7993 /* icon_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ACD0B16AE2818003C7993 /* icon_info.png */; };
 		848ACD1016AE2818003C7993 /* icon_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ACD0C16AE2818003C7993 /* icon_info@2x.png */; };
+		84B2706616B5769200078531 /* MACustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B2706516B5769100078531 /* MACustomTabBar.xib */; };
 		84B5473B16AD146900CAF94E /* MAStaffsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B5473A16AD146900CAF94E /* MAStaffsTableViewCell.m */; };
 		84B5474416AD26FF00CAF94E /* MAStaffsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B5474316AD26FF00CAF94E /* MAStaffsViewController.m */; };
 		84DE9E9E16AE82C1006C1D57 /* love.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DE9E9D16AE82C1006C1D57 /* love.png */; };
@@ -74,7 +75,6 @@
 		84E4D8D716ACF369008568D0 /* AMDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E4D8D616ACF369008568D0 /* AMDownloader.m */; };
 		84E4D8DA16ACF4AF008568D0 /* MAPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E4D8D916ACF4AF008568D0 /* MAPerson.m */; };
 		84E4D8E716ACFA69008568D0 /* MAEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E4D8E616ACFA69008568D0 /* MAEntry.m */; };
-		84E64B0216AF81EB00AC0487 /* MACustomTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64B0116AF81EB00AC0487 /* MACustomTabBarItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +121,7 @@
 		848ACD0A16AE2818003C7993 /* icon_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_contacts@2x.png"; sourceTree = "<group>"; };
 		848ACD0B16AE2818003C7993 /* icon_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_info.png; sourceTree = "<group>"; };
 		848ACD0C16AE2818003C7993 /* icon_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_info@2x.png"; sourceTree = "<group>"; };
+		84B2706516B5769100078531 /* MACustomTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MACustomTabBar.xib; sourceTree = "<group>"; };
 		84B5473916AD146900CAF94E /* MAStaffsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaffsTableViewCell.h; sourceTree = "<group>"; };
 		84B5473A16AD146900CAF94E /* MAStaffsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaffsTableViewCell.m; sourceTree = "<group>"; };
 		84B5474216AD26FE00CAF94E /* MAStaffsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaffsViewController.h; sourceTree = "<group>"; };
@@ -176,8 +177,6 @@
 		84E4D8D916ACF4AF008568D0 /* MAPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPerson.m; sourceTree = "<group>"; };
 		84E4D8E516ACFA69008568D0 /* MAEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEntry.h; sourceTree = "<group>"; };
 		84E4D8E616ACFA69008568D0 /* MAEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEntry.m; sourceTree = "<group>"; };
-		84E64B0016AF81EB00AC0487 /* MACustomTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACustomTabBarItem.h; sourceTree = "<group>"; };
-		84E64B0116AF81EB00AC0487 /* MACustomTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACustomTabBarItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,10 +315,9 @@
 				845979B316AD433400791371 /* MACustomTabBar.m */,
 				84484A0616AE4BC100CE40FC /* MACustomNavigationBar.h */,
 				84484A0716AE4BC100CE40FC /* MACustomNavigationBar.m */,
-				84E64B0016AF81EB00AC0487 /* MACustomTabBarItem.h */,
-				84E64B0116AF81EB00AC0487 /* MACustomTabBarItem.m */,
 				84248EE416B124D800169EF2 /* MAStaffDetailsCell.h */,
 				84248EE516B124D800169EF2 /* MAStaffDetailsCell.m */,
+				84B2706516B5769100078531 /* MACustomTabBar.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -485,6 +483,7 @@
 				843BE9B616B14A1B004D657A /* icon_sms@2x.png in Resources */,
 				843BE9B916B14A79004D657A /* icon_like.png in Resources */,
 				843BE9BA16B14A79004D657A /* icon_like@2x.png in Resources */,
+				84B2706616B5769200078531 /* MACustomTabBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +519,6 @@
 				84484A0816AE4BC100CE40FC /* MACustomNavigationBar.m in Sources */,
 				84DE9EAA16AE89D5006C1D57 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				84DE9EAB16AE89D5006C1D57 /* UIScrollView+SVPullToRefresh.m in Sources */,
-				84E64B0216AF81EB00AC0487 /* MACustomTabBarItem.m in Sources */,
 				84889D4B16AF9F4800857C44 /* MAStaffDetailsViewController.m in Sources */,
 				84248EE616B124D900169EF2 /* MAStaffDetailsCell.m in Sources */,
 			);

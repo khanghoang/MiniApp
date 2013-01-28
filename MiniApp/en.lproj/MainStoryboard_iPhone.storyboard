@@ -10,7 +10,7 @@
                 <tabBarController id="BSU-6b-2bH" customClass="MACustomTabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="OnH-Xc-A8F" customClass="MACustomTabBar">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OnH-Xc-A8F">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -318,8 +318,14 @@
                 <relationship kind="outlet" name="navigationBar" candidateClass="MACustomNavigationBar"/>
             </relationships>
         </class>
-        <class className="MACustomTabBar" superclassName="UITabBar">
+        <class className="MACustomTabBar" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomTabBar.h"/>
+            <relationships>
+                <relationship kind="action" name="contactSelected:"/>
+                <relationship kind="action" name="infoSelected:"/>
+                <relationship kind="outlet" name="contactButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="MACustomTabBarViewController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomTabBarViewController.h"/>
