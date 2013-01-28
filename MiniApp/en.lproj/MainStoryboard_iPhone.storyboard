@@ -305,64 +305,9 @@
         <image name="icon_info.png" width="49" height="49"/>
         <image name="icon_like.png" width="22" height="24"/>
         <image name="icon_sms.png" width="22" height="22"/>
-        <image name="images 2.jpeg" width="128" height="128"/>
+        <image name="images 2.jpeg" width="16" height="16"/>
         <image name="love.png" width="20" height="20"/>
     </resources>
-    <classes>
-        <class className="MACustomNavigationBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomNavigationBar.h"/>
-        </class>
-        <class className="MACustomNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomNavigationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="navigationBar" candidateClass="MACustomNavigationBar"/>
-            </relationships>
-        </class>
-        <class className="MACustomTabBar" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomTabBar.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contactButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MACustomTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomTabBarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="customTabBar" candidateClass="MACustomTabBar"/>
-            </relationships>
-        </class>
-        <class className="MAStaffDetailsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MAStaffDetailsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="leftDetail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MAStaffDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MAStaffDetailsViewController.h"/>
-        </class>
-        <class className="MAStaffsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MAStaffsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="textName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textRole" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MAStaffsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MAStaffsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MAWebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MAWebViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

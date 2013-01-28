@@ -22,6 +22,11 @@
 
 @implementation MAStaffDetailsViewController
 
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -140,7 +145,8 @@
             
             ABAddressBookRef addressBook;
             CFErrorRef error = NULL;
-            addressBook = ABAddressBookCreate();
+            
+            addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
             
             BOOL isAdded = ABAddressBookAddRecord (addressBook, aRecord, &error);
             

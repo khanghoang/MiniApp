@@ -39,35 +39,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self getStaffList];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+- (void)getStaffList
+{
     //get data
     [AMDownloader getDataFromURL:STAFF_DETAILS_URL
-         success:^(id JSON) {
-             
-             //do something when success
-             //         NSLog(@"%@", [JSON description]);
-             
-             NSArray* temp = (NSArray*) JSON;
-             
-             [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                 //for each element;
-                 [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-             }];
-             
-             //refresh table
-             [self.tableView reloadData];
-             
-         }
-         failure:^(NSError *error) {
-             //do something
-             NSLog(@"%@", @"Connection Error");
-         }];
+                         success:^(id JSON) {
+                             
+                             //do something when success
+                             //         NSLog(@"%@", [JSON description]);
+                             
+                             NSArray* temp = (NSArray*) JSON;
+                             
+                             // Clear all for refresh
+                             [self.listStaffs removeAllObjects];
+                             
+                             [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                                 //for each element;
+                                 [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
+                             }];
+                             
+                             //refresh table
+                             [self.tableView reloadData];
+                             
+                         }
+                         failure:^(NSError *error) {
+                             //do something
+                             //             NSLog(@"%@", @"Connection Error");
+                             UIAlertView* errorConnection = [[UIAlertView alloc]initWithTitle:@"Connection Error" message:@"Connect and try again :)" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles:nil];
+                             
+                             [errorConnection show];
+                         }];
     
     
     __weak MAStaffsViewController *weakSelf = self;
@@ -81,27 +85,34 @@
                 
                 //get data
                 [AMDownloader getDataFromURL:STAFF_DETAILS_URL
-                     success:^(id JSON) {
-                         
-                         //do something when success
-                         NSArray* temp = (NSArray*) JSON;
-                         
-                         [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                             //for each element;
-                             [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-                         }];
-                         
-                         //refresh table
-                         [self.tableView reloadData];
-                         
-                         //end loading status
-                         [weakSelf.tableView.pullToRefreshView stopAnimating];
-                         
-                     }
-                     failure:^(NSError *error) {
-                         //do something
-                         NSLog(@"%@", @"Connection Error");
-                     }];
+                                     success:^(id JSON) {
+                                         
+                                         // Clear all for refresh
+                                         [self.listStaffs removeAllObjects];
+                                         
+                                         //do something when success
+                                         NSArray* temp = (NSArray*) JSON;
+                                         
+                                         
+                                         [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                                             //for each element;
+                                             [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
+                                         }];
+                                         
+                                         //refresh table
+                                         [self.tableView reloadData];
+                                         
+                                         //end loading status
+                                         [weakSelf.tableView.pullToRefreshView stopAnimating];
+                                         
+                                     }
+                                     failure:^(NSError *error) {
+                                         //do something
+                                         //                         NSLog(@"%@", @"Connection Error");
+                                         UIAlertView* errorConnection = [[UIAlertView alloc]initWithTitle:@"Connection Error" message:@"Connect and try again :)" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles:nil];
+                                         
+                                         [errorConnection show];
+                                     }];
                 
                 
                 [weakSelf.tableView endUpdates];
@@ -110,8 +121,6 @@
             
         });
     }];
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -140,10 +149,7 @@
 {
     //change background color
     if (indexPath.row % 2 == 0) {
-//        UIView* bgview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
-        //        bgview.opaque = YES;
         cell.backgroundColor = [UIColor colorWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)0.1];
-//        [cell setBackgroundView:bgview];
     }
 }
 
@@ -161,9 +167,9 @@
     cell.textName.textColor = [UIColor blackColor];
     cell.textRole.text = [[self.listStaffs objectAtIndex:indexPath.row] role];
     
-    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"images 2.jpeg"]];
+    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"icon_profile.png"]];
     
-    cell.avatarImage.layer.cornerRadius = 22;
+    cell.avatarImage.layer.cornerRadius = 30;
     cell.avatarImage.clipsToBounds = YES;
     
     cell.avatarImage.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -182,9 +188,10 @@
     
     // Male and Female
     if([[[[self.listStaffs objectAtIndex:indexPath.row] gender] uppercaseString] isEqualToString:@"MALE"])
-        cell.textName.textColor = [UIColor blueColor];
-    else
         cell.textName.textColor = [UIColor orangeColor];
+    else
+        cell.textName.textColor = [UIColor blueColor];
+
     
     return cell;
 }

@@ -8,12 +8,14 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
+#define COMPANY_URL @"http://2359media.com"
+#define STAFF_DETAILS_URL @"https://dl.dropbox.com/u/11295402/MiniEval/data.json"
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
     //more
-    #import "MAConstant.h"
     #import "JSONKit.h"
     #import "AFNetworking.h"
 
