@@ -75,6 +75,9 @@
     
     self.navigationItem.rightBarButtonItem = addToContactBarButtonItem;
     
+    // Clear the border of cell
+    self.tableView.separatorColor = [UIColor clearColor];
+    
 }
 
 

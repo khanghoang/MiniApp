@@ -123,8 +123,6 @@
             
         });
     }];
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -174,9 +172,9 @@
     cell.textName.textColor = [UIColor blackColor];
     cell.textRole.text = [[self.listStaffs objectAtIndex:indexPath.row] role];
     
-    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"images 2.jpeg"]];
+    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"icon_profile.png"]];
     
-    cell.avatarImage.layer.cornerRadius = 22;
+    cell.avatarImage.layer.cornerRadius = 30;
     cell.avatarImage.clipsToBounds = YES;
     
     cell.avatarImage.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -198,6 +196,7 @@
         cell.textName.textColor = [UIColor orangeColor];
     else
         cell.textName.textColor = [UIColor blueColor];
+
     
     return cell;
 }

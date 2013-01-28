@@ -99,7 +99,7 @@
                                             <rect key="frame" x="275" y="32" width="20" height="20"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="images 2.jpeg" id="ahM-TR-ARd">
-                                            <rect key="frame" x="20" y="16" width="44" height="44"/>
+                                            <rect key="frame" x="15" y="12" width="60" height="60"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -145,6 +145,7 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="c7T-oG-omT">
                                             <rect key="frame" x="10" y="8" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Rc-ku-Xce">
                                             <rect key="frame" x="86" y="8" width="214" height="20"/>

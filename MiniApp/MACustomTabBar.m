@@ -29,11 +29,24 @@
 
 }
 
+- (void)resetBackgroundButton
+{
+    [self.infoButton setImage:[UIImage imageNamed:@"icon_info.png"] forState:UIControlStateNormal];
+    [self.contactButton setImage:[UIImage imageNamed:@"icon_contacts.png"] forState:UIControlStateNormal];
+
+}
+
 - (IBAction)infoSelected:(id)sender {
     NSLog(@"Info selected");
+    [self resetBackgroundButton];
+    [self.delegate tabSelected:1];
+    [self.infoButton setImage:[UIImage imageNamed:@"icon_info_selected.png"] forState:UIControlStateNormal];
 }
 
 - (IBAction)contactSelected:(id)sender {
     NSLog(@"Contact selected");
+    [self resetBackgroundButton];
+    [self.delegate tabSelected:0];
+    [self.contactButton setImage:[UIImage imageNamed:@"icon_contacts_selected.png"] forState:UIControlStateNormal];
 }
 @end
