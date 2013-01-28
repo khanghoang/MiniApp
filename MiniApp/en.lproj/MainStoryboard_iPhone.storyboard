@@ -12,7 +12,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="OnH-Xc-A8F">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <outlet property="tabBar" destination="OnH-Xc-A8F" id="Qxv-06-gLy"/>
@@ -321,8 +320,6 @@
         <class className="MACustomTabBar" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomTabBar.h"/>
             <relationships>
-                <relationship kind="action" name="contactSelected:"/>
-                <relationship kind="action" name="infoSelected:"/>
                 <relationship kind="outlet" name="contactButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
             </relationships>
@@ -330,7 +327,7 @@
         <class className="MACustomTabBarViewController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MACustomTabBarViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="tabBar" candidateClass="MACustomTabBar"/>
+                <relationship kind="outlet" name="customTabBar" candidateClass="MACustomTabBar"/>
             </relationships>
         </class>
         <class className="MAStaffDetailsCell" superclassName="UITableViewCell">

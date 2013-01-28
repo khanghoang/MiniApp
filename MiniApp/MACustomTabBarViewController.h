@@ -11,6 +11,6 @@
 
 @interface MACustomTabBarViewController : UITabBarController <MACustomTabBarDelegate>
 
-@property (weak, nonatomic) IBOutlet MACustomTabBar *tabBar;
+@property (weak, nonatomic) IBOutlet MACustomTabBar *customTabBar;
 
 @end

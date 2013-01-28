@@ -23,9 +23,9 @@
     return self;
 }
 
-- (void)viewDidLoad:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
     
 //    [super viewWillAppear:animated];
     
@@ -73,16 +73,20 @@
 
     // Loading from xib file
     NSArray* nibObjects = [[NSBundle mainBundle] loadNibNamed:@"MACustomTabBar" owner:self options:nil];
-    self.tabBar = [nibObjects objectAtIndex:0];
+    self.customTabBar = [nibObjects objectAtIndex:0];
     
-    self.tabBar.delegate = self;
+    self.customTabBar.delegate = self;
     
-    CGRect bottomLocation = self.tabBar.frame;
-    bottomLocation.origin.y = self.view.frame.size.height - self.tabBar.frame.size.height;
-    [self.tabBar setFrame:bottomLocation];
+    CGRect bottomLocation = self.customTabBar.frame;
+    bottomLocation.origin.y = self.view.frame.size.height - self.customTabBar.frame.size.height;
+    [self.customTabBar setFrame:bottomLocation];
     
-    [self.view addSubview:self.tabBar];
+    [self.view addSubview:self.customTabBar];
 }
 
+-(void)tabSelected:(NSInteger)tabIndex
+{
+    NSLog(@"%d", tabIndex);
+}
 
 @end
