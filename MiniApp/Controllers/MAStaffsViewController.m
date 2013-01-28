@@ -14,7 +14,9 @@
 #import "MAStaffDetailsViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface MAStaffsViewController ()
+@interface MAStaffsViewController () <StaffsTableViewCell>
+
+@property (strong, nonatomic) NSMutableArray* listStaffs;
 
 @end
 
@@ -160,40 +162,31 @@
     
     if(!cell)
         cell = [[MAStaffsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    NSLog(@"w%g h%g", cell.avatarImage.frame.size.width, cell.avatarImage.frame.size.height);
-
+    
     // Configure the cell...
-    cell.textName.text = [[self.listStaffs objectAtIndex:indexPath.row] name];
-    cell.textName.textColor = [UIColor blackColor];
-    cell.textRole.text = [[self.listStaffs objectAtIndex:indexPath.row] role];
-    
-    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"icon_profile.png"]];
-    
-    cell.avatarImage.layer.cornerRadius = 30;
-    cell.avatarImage.clipsToBounds = YES;
-    
-    cell.avatarImage.layer.borderColor = [UIColor whiteColor].CGColor;
-    cell.avatarImage.layer.borderWidth = 3;
-    
-    cell.starImage.hidden = YES;
-    
-    if([[self getNumberOfTheMostFamous] integerValue] == [[self getNumberOfName:[[self.listStaffs objectAtIndex:indexPath.row] name]] integerValue])
-    {
-//        NSLog(@"%d", [[self getNumberOfTheMostFamous] integerValue]);
-//        NSLog(@"%d", [[self getNumberOfName:[[self.listStaffs objectAtIndex:indexPath.row] name]] integerValue]);
-        cell.textName.textColor = [UIColor orangeColor];
-        
-        cell.starImage.hidden = NO;
-    }
-    
-    // Male and Female
-    if([[[[self.listStaffs objectAtIndex:indexPath.row] gender] uppercaseString] isEqualToString:@"MALE"])
-        cell.textName.textColor = [UIColor orangeColor];
-    else
-        cell.textName.textColor = [UIColor blueColor];
+//    cell.textName.text = [[self.listStaffs objectAtIndex:indexPath.row] name];
+//    cell.textName.textColor = [UIColor blackColor];
+//    cell.textRole.text = [[self.listStaffs objectAtIndex:indexPath.row] role];
+//    
+//    [cell.avatarImage setImageWithURL:[NSURL URLWithString:(NSString*)[[self.listStaffs objectAtIndex:indexPath.row] imageUrl]] placeholderImage:[UIImage imageNamed:@"icon_profile.png"]];
+//    
+//    cell.avatarImage.layer.cornerRadius = 30;
+//    cell.avatarImage.clipsToBounds = YES;
+//    
+//    cell.avatarImage.layer.borderColor = [UIColor whiteColor].CGColor;
+//    cell.avatarImage.layer.borderWidth = 3;
+//    
+//    cell.starImage.hidden = YES;
+//    
+//
+//    // Male and Female
+//    if([[[[self.listStaffs objectAtIndex:indexPath.row] gender] uppercaseString] isEqualToString:@"MALE"])
+//        cell.textName.textColor = [UIColor orangeColor];
+//    else
+//        cell.textName.textColor = [UIColor blueColor];
 
     
-    return cell;
+    return [cell initStaffTableViewCellWith:[self.listStaffs objectAtIndex:indexPath.row]];
 }
 
 #pragma mark - Table view delegate
@@ -282,6 +275,11 @@
         
         [self.tableView reloadData];
     }
+}
+
+- (MAPerson*)getStaffAtIndex:(NSIndexPath *)index
+{
+    return (MAPerson*)[self.listStaffs objectAtIndex:index.row];
 }
 
 @end

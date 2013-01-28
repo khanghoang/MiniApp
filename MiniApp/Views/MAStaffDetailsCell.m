@@ -8,6 +8,7 @@
 
 #import "MAStaffDetailsCell.h"
 
+
 @implementation MAStaffDetailsCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
