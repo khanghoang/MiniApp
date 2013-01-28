@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		843E01BF16B2418F00287441 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843E01BE16B2418F00287441 /* MessageUI.framework */; };
 		846B78BB16B26A4D0021AAA2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846B78BA16B26A4D0021AAA2 /* AddressBook.framework */; };
-		8491929B16B654A8003B148C /* MAEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491929816B654A8003B148C /* MAEntry.m */; };
 		8491929C16B654A8003B148C /* MAPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491929A16B654A8003B148C /* MAPerson.m */; };
 		849192A016B654BC003B148C /* AMDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491929F16B654BC003B148C /* AMDownloader.m */; };
 		849192AB16B654CF003B148C /* MACustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192A216B654CF003B148C /* MACustomNavigationViewController.m */; };
@@ -78,8 +77,6 @@
 /* Begin PBXFileReference section */
 		843E01BE16B2418F00287441 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		846B78BA16B26A4D0021AAA2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		8491929716B654A8003B148C /* MAEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAEntry.h; path = Models/MAEntry.h; sourceTree = "<group>"; };
-		8491929816B654A8003B148C /* MAEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAEntry.m; path = Models/MAEntry.m; sourceTree = "<group>"; };
 		8491929916B654A8003B148C /* MAPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAPerson.h; path = Models/MAPerson.h; sourceTree = "<group>"; };
 		8491929A16B654A8003B148C /* MAPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAPerson.m; path = Models/MAPerson.m; sourceTree = "<group>"; };
 		8491929E16B654BC003B148C /* AMDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMDownloader.h; path = Managers/AMDownloader.h; sourceTree = "<group>"; };
@@ -370,8 +367,6 @@
 		84E4D8B016ACEE01008568D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8491929716B654A8003B148C /* MAEntry.h */,
-				8491929816B654A8003B148C /* MAEntry.m */,
 				8491929916B654A8003B148C /* MAPerson.h */,
 				8491929A16B654A8003B148C /* MAPerson.m */,
 			);
@@ -511,7 +506,6 @@
 			files = (
 				84E4D89416ACEDA0008568D0 /* main.m in Sources */,
 				84E4D89816ACEDA0008568D0 /* MAAppDelegate.m in Sources */,
-				8491929B16B654A8003B148C /* MAEntry.m in Sources */,
 				8491929C16B654A8003B148C /* MAPerson.m in Sources */,
 				849192A016B654BC003B148C /* AMDownloader.m in Sources */,
 				849192AB16B654CF003B148C /* MACustomNavigationViewController.m in Sources */,

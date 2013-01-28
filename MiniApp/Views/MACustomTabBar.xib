@@ -532,9 +532,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="icon_contacts.png">{16, 16}</string>
-			<string key="icon_info.png">{16, 16}</string>
-			<string key="middle_button.png">{16, 16}</string>
+			<string key="icon_contacts.png">{49, 49}</string>
+			<string key="icon_info.png">{49, 49}</string>
+			<string key="middle_button.png">{83, 53}</string>
 		</dictionary>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
