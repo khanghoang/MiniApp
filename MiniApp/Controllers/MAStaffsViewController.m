@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getStaffList];
+    [self displayStaffList];
 }
 
 - (void)displayStaffList
@@ -50,37 +50,29 @@
     //get data
     [AMDownloader getDataFromURL:STAFF_DETAILS_URL
                          success:^(id JSON) {
-                             
-                             //do something when success
-                             //         NSLog(@"%@", [JSON description]);
-                             
                              NSArray* temp = (NSArray*) JSON;
                              
                              self.listStaffs = [NSMutableArray array];
-                             // Clear all for refresh
                              [self.listStaffs removeAllObjects];
                              
                              [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                                 //for each element;
                                  [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
                              }];
                              
                              //refresh table
-                             /* Animate the table view reload */
                              [UIView transitionWithView: self.staffsTableView
                                                duration: 0.35f
                                                 options: UIViewAnimationOptionTransitionCrossDissolve
                                              animations: ^(void)
                                                           {
                                                               [self.staffsTableView reloadData];
+                                                              [self.staffsTableView.pullToRefreshView stopAnimating];
                                                           }
                                              completion: ^(BOOL isFinished){}
                               ];
                              
                          }
                          failure:^(NSError *error) {
-                             //do something
-                             //             NSLog(@"%@", @"Connection Error");
                              UIAlertView* errorConnection = [[UIAlertView alloc]initWithTitle:@"Connection Error" message:@"Connect and try again :)" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles:nil];
                              
                              [errorConnection show];
@@ -92,14 +84,13 @@
     __weak MAStaffsViewController *weakSelf = self;
     
     // setup pull-to-refresh
-    [weakSelf.staffsTableView addPullToRefreshWithActionHandler:^{
+    [self.tableView addPullToRefreshWithActionHandler:^{
         [weakSelf.staffsTableView beginUpdates];
-        [weakSelf.staffsTableView.pullToRefreshView startAnimating];
         [weakSelf getStaffList];
         [weakSelf.staffsTableView endUpdates];
-        [weakSelf.staffsTableView.pullToRefreshView stopAnimating];
     }];
-
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
