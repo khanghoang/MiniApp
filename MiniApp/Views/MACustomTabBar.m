@@ -33,13 +33,12 @@
 {
     [self.infoButton setImage:[UIImage imageNamed:@"icon_info.png"] forState:UIControlStateNormal];
     [self.contactButton setImage:[UIImage imageNamed:@"icon_contacts.png"] forState:UIControlStateNormal];
-
 }
 
 - (IBAction)infoSelected:(id)sender {
     NSLog(@"Info selected");
     [self resetBackgroundButton];
-    [self.delegate tabSelected:1];
+    [self.delegate tabSelected:1];    
     [self.infoButton setImage:[UIImage imageNamed:@"icon_info_selected.png"] forState:UIControlStateNormal];
 }
 

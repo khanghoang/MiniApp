@@ -118,9 +118,9 @@
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //change background color
-    if (indexPath.row % 2 == 0) {
-        cell.backgroundColor = [UIColor colorWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)0.1];
-    }
+//    if (indexPath.row % 2 == 0) {
+//        cell.backgroundColor = [UIColor colorWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)0.1];
+//    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -133,7 +133,7 @@
 
     cell.delegate = self;
     
-    return [cell initStaffTableViewCellWith:[self.listStaffs objectAtIndex:indexPath.row]];
+    return [cell initStaffTableViewCellWith:[self.listStaffs objectAtIndex:indexPath.row] isOdd:(indexPath.row % 2 == 0 ? YES : NO)];
 }
 
 #pragma mark - Table view delegate

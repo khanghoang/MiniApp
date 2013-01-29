@@ -39,7 +39,7 @@
     // Configure the view for the selected state
 }
 
-- (MAStaffsTableViewCell*)initStaffTableViewCellWith:(MAPerson*)staff
+- (MAStaffsTableViewCell*)initStaffTableViewCellWith:(MAPerson*)staff isOdd:(BOOL)isOdd
 {
     // Configure the cell...
     self.textName.text = staff.name;
@@ -67,6 +67,9 @@
         self.textName.textColor = [UIColor orangeColor];
     else
         self.textName.textColor = [UIColor blueColor];
+    
+    if(isOdd)
+        self.contentView.backgroundColor = [UIColor colorWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)0.1];
 
     return self;
 }

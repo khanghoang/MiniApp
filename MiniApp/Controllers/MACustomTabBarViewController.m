@@ -7,6 +7,7 @@
 //
 
 #import "MACustomTabBarViewController.h"
+#import "MAAppDimensions.h"
 
 @interface MACustomTabBarViewController ()
 
@@ -42,10 +43,12 @@
     self.customTabBar.delegate = self;
     
     CGRect bottomLocation = self.customTabBar.frame;
+    
     bottomLocation.origin.y = self.view.frame.size.height - self.customTabBar.frame.size.height;
+
     [self.customTabBar setFrame:bottomLocation];
     
-    self.customTabBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+//    self.customTabBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
     
     [self.view addSubview:self.customTabBar];
 }

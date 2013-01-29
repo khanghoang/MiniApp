@@ -21,6 +21,6 @@
 
 @property (nonatomic, assign) NSObject<StaffsTableViewCell>* delegate;
 
-- (MAStaffsTableViewCell*)initStaffTableViewCellWith:(MAPerson*)staff;
+- (MAStaffsTableViewCell*)initStaffTableViewCellWith:(MAPerson*)staff isOdd:(BOOL)isOdd;
 
 @end
