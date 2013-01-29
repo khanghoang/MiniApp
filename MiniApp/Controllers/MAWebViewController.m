@@ -10,6 +10,8 @@
 
 @interface MAWebViewController ()
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 @end
 
 @implementation MAWebViewController

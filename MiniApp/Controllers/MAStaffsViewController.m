@@ -13,8 +13,11 @@
 #import "SVPullToRefresh.h"
 #import "MAStaffDetailsViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIScrollView+SVPullToRefresh.h"
 
 @interface MAStaffsViewController () <StaffsTableViewCell>
+
+@property (strong, nonatomic) IBOutlet UITableView *staffsTableView;
 
 @property (strong, nonatomic) NSMutableArray* listStaffs;
 
@@ -42,7 +45,6 @@
     [self getStaffList];
     [self pullToRefresh];
 }
-
 - (void)getStaffList
 {
     //get data
@@ -65,12 +67,12 @@
                              
                              //refresh table
                              /* Animate the table view reload */
-                             [UIView transitionWithView: self.tableView
+                             [UIView transitionWithView: self.staffsTableView
                                                duration: 0.35f
                                                 options: UIViewAnimationOptionTransitionCrossDissolve
                                              animations: ^(void)
                                                           {
-                                                              [self.tableView reloadData];
+                                                              [self.staffsTableView reloadData];
                                                           }
                                              completion: ^(BOOL isFinished){}
                               ];
@@ -90,50 +92,12 @@
     __weak MAStaffsViewController *weakSelf = self;
     
     // setup pull-to-refresh
-    [self.tableView addPullToRefreshWithActionHandler:^{
-        dispatch_queue_t downloadQueue = dispatch_queue_create("refresh", NULL);
-        dispatch_async(downloadQueue, ^(void){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.tableView beginUpdates];
-                
-                //get data
-                [AMDownloader getDataFromURL:STAFF_DETAILS_URL
-                                     success:^(id JSON) {
-                                         
-                                         self.listStaffs = [NSMutableArray array];
-                                         // Clear all for refresh
-                                         [self.listStaffs removeAllObjects];
-                                         
-                                         //do something when success
-                                         NSArray* temp = (NSArray*) JSON;
-                                         
-                                         
-                                         [temp enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                                             //for each element;
-                                             [self.listStaffs addObject:[MAPerson initWithDictionary:obj]];
-                                         }];
-                                         
-                                         //refresh table
-                                         [self.tableView reloadData];
-                                         
-                                         //end loading status
-                                         [weakSelf.tableView.pullToRefreshView stopAnimating];
-                                         
-                                     }
-                                     failure:^(NSError *error) {
-                                         //do something
-                                         //                         NSLog(@"%@", @"Connection Error");
-                                         UIAlertView* errorConnection = [[UIAlertView alloc]initWithTitle:@"Connection Error" message:@"Connect and try again :)" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles:nil];
-                                         
-                                         [errorConnection show];
-                                     }];
-                
-                
-                [weakSelf.tableView endUpdates];
-                
-            });
-            
-        });
+    [weakSelf.staffsTableView addPullToRefreshWithActionHandler:^{
+        [weakSelf.staffsTableView beginUpdates];
+        [weakSelf.staffsTableView.pullToRefreshView startAnimating];
+        [weakSelf getStaffList];
+        [weakSelf.staffsTableView endUpdates];
+        [weakSelf.staffsTableView.pullToRefreshView stopAnimating];
     }];
 
 }
@@ -261,12 +225,12 @@
 {
     if([segue.identifier isEqualToString:@"Show staff details"])
     {
-        [self increaseHitOf:[[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row] name]];
+        [self increaseHitOf:[[self.listStaffs objectAtIndex:[self.staffsTableView indexPathForSelectedRow].row] name]];
 //        NSLog(@"Most famous = %@", [self getNumberOfTheMostFamous]);
         
         [segue.destinationViewController setPerson:[self.listStaffs objectAtIndex:[self.tableView indexPathForSelectedRow].row]];
         
-        [self.tableView reloadData];
+        [self.staffsTableView reloadData];
     }
 }
 

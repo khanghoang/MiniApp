@@ -10,6 +10,4 @@
 
 @interface MAStaffsViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-
 @end
