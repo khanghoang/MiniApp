@@ -25,9 +25,9 @@
  */
 
 //remove the shadow and glossy
-- (void)drawRect:(CGRect)rect {
-
-}
+//- (void)drawRect:(CGRect)rect {
+//
+//}
 
 - (void)resetBackgroundButton
 {

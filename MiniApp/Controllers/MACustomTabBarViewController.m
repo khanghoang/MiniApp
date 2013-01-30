@@ -7,7 +7,6 @@
 //
 
 #import "MACustomTabBarViewController.h"
-#import "MAAppDimensions.h"
 
 @interface MACustomTabBarViewController ()
 

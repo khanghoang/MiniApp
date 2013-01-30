@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		843E01BF16B2418F00287441 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843E01BE16B2418F00287441 /* MessageUI.framework */; };
 		846B78BB16B26A4D0021AAA2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846B78BA16B26A4D0021AAA2 /* AddressBook.framework */; };
-		84901BB216B77AA100F0D4D6 /* MAAppDimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84901BB116B77AA100F0D4D6 /* MAAppDimensions.m */; };
+		846F7AA216B8F79700BD2DD8 /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 846F7AA016B8F79700BD2DD8 /* navbar.png */; };
+		846F7AA316B8F79700BD2DD8 /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846F7AA116B8F79700BD2DD8 /* navbar@2x.png */; };
 		8491929C16B654A8003B148C /* MAPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491929A16B654A8003B148C /* MAPerson.m */; };
 		849192A016B654BC003B148C /* AMDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491929F16B654BC003B148C /* AMDownloader.m */; };
 		849192AB16B654CF003B148C /* MACustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192A216B654CF003B148C /* MACustomNavigationViewController.m */; };
@@ -77,8 +78,8 @@
 /* Begin PBXFileReference section */
 		843E01BE16B2418F00287441 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		846B78BA16B26A4D0021AAA2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		84901BB016B77AA100F0D4D6 /* MAAppDimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAppDimensions.h; sourceTree = "<group>"; };
-		84901BB116B77AA100F0D4D6 /* MAAppDimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAAppDimensions.m; sourceTree = "<group>"; };
+		846F7AA016B8F79700BD2DD8 /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar.png; path = "Resources/Images/Staff list icons/navbar.png"; sourceTree = "<group>"; };
+		846F7AA116B8F79700BD2DD8 /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar@2x.png"; path = "Resources/Images/Staff list icons/navbar@2x.png"; sourceTree = "<group>"; };
 		8491929916B654A8003B148C /* MAPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAPerson.h; path = Models/MAPerson.h; sourceTree = "<group>"; };
 		8491929A16B654A8003B148C /* MAPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAPerson.m; path = Models/MAPerson.m; sourceTree = "<group>"; };
 		8491929E16B654BC003B148C /* AMDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMDownloader.h; path = Managers/AMDownloader.h; sourceTree = "<group>"; };
@@ -209,6 +210,8 @@
 		8491931A16B6583F003B148C /* Staff list icons */ = {
 			isa = PBXGroup;
 			children = (
+				846F7AA016B8F79700BD2DD8 /* navbar.png */,
+				846F7AA116B8F79700BD2DD8 /* navbar@2x.png */,
 				8491933416B65886003B148C /* icon_contacts_selected.png */,
 				8491933516B65886003B148C /* icon_contacts_selected@2x.png */,
 				8491933616B65886003B148C /* icon_contacts.png */,
@@ -331,8 +334,6 @@
 				849192DA16B6554D003B148C /* MACustomTabBar.xib */,
 				849192DD16B6554D003B148C /* MAStaffsTableViewCell.h */,
 				849192DE16B6554D003B148C /* MAStaffsTableViewCell.m */,
-				84901BB016B77AA100F0D4D6 /* MAAppDimensions.h */,
-				84901BB116B77AA100F0D4D6 /* MAAppDimensions.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -494,6 +495,8 @@
 				8491934F16B65886003B148C /* love.png in Resources */,
 				8491935016B65886003B148C /* middle_button.png in Resources */,
 				8491935116B65886003B148C /* middle_button@2x.png in Resources */,
+				846F7AA216B8F79700BD2DD8 /* navbar.png in Resources */,
+				846F7AA316B8F79700BD2DD8 /* navbar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +530,6 @@
 				849192DF16B6554D003B148C /* MACustomNavigationBar.m in Sources */,
 				849192E016B6554D003B148C /* MACustomTabBar.m in Sources */,
 				849192E316B6554D003B148C /* MAStaffsTableViewCell.m in Sources */,
-				84901BB216B77AA100F0D4D6 /* MAAppDimensions.m in Sources */,
 				84D9B80616B7B5F100074299 /* MAStaffDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

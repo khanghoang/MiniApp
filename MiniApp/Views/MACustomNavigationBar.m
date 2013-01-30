@@ -25,10 +25,10 @@
  */
 
 //remove the shadow and glossy
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
+//- (void)drawRect:(CGRect)rect
+//{
+//    // Drawing code
+//}
 
 
 @end

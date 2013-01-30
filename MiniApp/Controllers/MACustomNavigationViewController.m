@@ -26,17 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    UIColor *background = [[UIColor alloc] initWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)1];
-    
-    self.navigationBar.backgroundColor = background;
-    self.navigationBar.tintColor = background;
-    self.navigationBar.shadowImage = nil;
-    
-    UIGraphicsBeginImageContext(CGSizeMake(320, 40));
-    [background setFill];
-    UIRectFill(CGRectMake(0, 0, 320, 40));
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:0];
+
 }
 
 - (void)didReceiveMemoryWarning
