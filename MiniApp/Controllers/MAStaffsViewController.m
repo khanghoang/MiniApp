@@ -11,7 +11,7 @@
 #import "MAPerson.h"
 #import "MAStaffsTableViewCell.h"
 #import "SVPullToRefresh.h"
-#import "MAStaffDetailsViewController.h"
+#import "MAStaffDetailsController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIScrollView+SVPullToRefresh.h"
 

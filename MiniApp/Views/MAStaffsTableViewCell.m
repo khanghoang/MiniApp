@@ -58,7 +58,6 @@
     
     if([[self.delegate getNumberOfTheMostFamous] integerValue] == [[self.delegate getNumberOfName:staff.name] integerValue])
     {
-//        self.textName.textColor = [UIColor orangeColor];
         self.starImage.hidden = NO;
     }
     
@@ -69,7 +68,11 @@
         self.textName.textColor = [UIColor blueColor];
     
     if(isOdd)
-        self.contentView.backgroundColor = [UIColor colorWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)0.1];
+    {
+        UIView* background = [[UIView alloc]init];
+        background.backgroundColor = [UIColor colorWithRed:(CGFloat)1 green:(CGFloat)0.5 blue:(CGFloat)0.2 alpha:(CGFloat)0.1];
+        self.backgroundView = background;
+    }
 
     return self;
 }

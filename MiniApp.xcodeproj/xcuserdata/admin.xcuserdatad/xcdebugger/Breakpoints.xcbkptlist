@@ -268,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MiniApp/Views/MAStaffsTableViewCell.m"
-         timestampString = "381121777.712529"
+         timestampString = "381203677.000333"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
          landmarkName = "-initStaffTableViewCellWith:isOdd:"
          landmarkType = "5">
       </FileBreakpoint>

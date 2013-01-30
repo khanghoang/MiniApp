@@ -14,7 +14,6 @@
 		849192A016B654BC003B148C /* AMDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491929F16B654BC003B148C /* AMDownloader.m */; };
 		849192AB16B654CF003B148C /* MACustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192A216B654CF003B148C /* MACustomNavigationViewController.m */; };
 		849192AC16B654CF003B148C /* MACustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192A416B654CF003B148C /* MACustomTabBarViewController.m */; };
-		849192AD16B654CF003B148C /* MAStaffDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192A616B654CF003B148C /* MAStaffDetailsViewController.m */; };
 		849192AE16B654CF003B148C /* MAStaffsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192A816B654CF003B148C /* MAStaffsViewController.m */; };
 		849192AF16B654CF003B148C /* MAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192AA16B654CF003B148C /* MAWebViewController.m */; };
 		849192B516B6550B003B148C /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192B216B6550B003B148C /* UIScrollView+SVInfiniteScrolling.m */; };
@@ -61,6 +60,7 @@
 		8491934F16B65886003B148C /* love.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491934016B65886003B148C /* love.png */; };
 		8491935016B65886003B148C /* middle_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491934116B65886003B148C /* middle_button.png */; };
 		8491935116B65886003B148C /* middle_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491934216B65886003B148C /* middle_button@2x.png */; };
+		84D9B80616B7B5F100074299 /* MAStaffDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9B80516B7B5F100074299 /* MAStaffDetailsController.m */; };
 		84DE9EAE16AE8BF4006C1D57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DE9EAD16AE8BF3006C1D57 /* QuartzCore.framework */; };
 		84E4D88816ACEDA0008568D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E4D88716ACEDA0008568D0 /* UIKit.framework */; };
 		84E4D88A16ACEDA0008568D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E4D88916ACEDA0008568D0 /* Foundation.framework */; };
@@ -88,8 +88,6 @@
 		849192A216B654CF003B148C /* MACustomNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MACustomNavigationViewController.m; path = Controllers/MACustomNavigationViewController.m; sourceTree = "<group>"; };
 		849192A316B654CF003B148C /* MACustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MACustomTabBarViewController.h; path = Controllers/MACustomTabBarViewController.h; sourceTree = "<group>"; };
 		849192A416B654CF003B148C /* MACustomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MACustomTabBarViewController.m; path = Controllers/MACustomTabBarViewController.m; sourceTree = "<group>"; };
-		849192A516B654CF003B148C /* MAStaffDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAStaffDetailsViewController.h; path = Controllers/MAStaffDetailsViewController.h; sourceTree = "<group>"; };
-		849192A616B654CF003B148C /* MAStaffDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAStaffDetailsViewController.m; path = Controllers/MAStaffDetailsViewController.m; sourceTree = "<group>"; };
 		849192A716B654CF003B148C /* MAStaffsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAStaffsViewController.h; path = Controllers/MAStaffsViewController.h; sourceTree = "<group>"; };
 		849192A816B654CF003B148C /* MAStaffsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAStaffsViewController.m; path = Controllers/MAStaffsViewController.m; sourceTree = "<group>"; };
 		849192A916B654CF003B148C /* MAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAWebViewController.h; path = Controllers/MAWebViewController.h; sourceTree = "<group>"; };
@@ -156,6 +154,8 @@
 		8491934016B65886003B148C /* love.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = love.png; path = "Resources/Images/Staff list icons/love.png"; sourceTree = "<group>"; };
 		8491934116B65886003B148C /* middle_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = middle_button.png; path = "Resources/Images/Staff list icons/middle_button.png"; sourceTree = "<group>"; };
 		8491934216B65886003B148C /* middle_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "middle_button@2x.png"; path = "Resources/Images/Staff list icons/middle_button@2x.png"; sourceTree = "<group>"; };
+		84D9B80416B7B5F100074299 /* MAStaffDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaffDetailsController.h; sourceTree = "<group>"; };
+		84D9B80516B7B5F100074299 /* MAStaffDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaffDetailsController.m; sourceTree = "<group>"; };
 		84DE9EAD16AE8BF3006C1D57 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84E4D88316ACEDA0008568D0 /* MiniApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E4D88716ACEDA0008568D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -359,12 +359,12 @@
 				849192A216B654CF003B148C /* MACustomNavigationViewController.m */,
 				849192A316B654CF003B148C /* MACustomTabBarViewController.h */,
 				849192A416B654CF003B148C /* MACustomTabBarViewController.m */,
-				849192A516B654CF003B148C /* MAStaffDetailsViewController.h */,
-				849192A616B654CF003B148C /* MAStaffDetailsViewController.m */,
 				849192A716B654CF003B148C /* MAStaffsViewController.h */,
 				849192A816B654CF003B148C /* MAStaffsViewController.m */,
 				849192A916B654CF003B148C /* MAWebViewController.h */,
 				849192AA16B654CF003B148C /* MAWebViewController.m */,
+				84D9B80416B7B5F100074299 /* MAStaffDetailsController.h */,
+				84D9B80516B7B5F100074299 /* MAStaffDetailsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -515,7 +515,6 @@
 				849192A016B654BC003B148C /* AMDownloader.m in Sources */,
 				849192AB16B654CF003B148C /* MACustomNavigationViewController.m in Sources */,
 				849192AC16B654CF003B148C /* MACustomTabBarViewController.m in Sources */,
-				849192AD16B654CF003B148C /* MAStaffDetailsViewController.m in Sources */,
 				849192AE16B654CF003B148C /* MAStaffsViewController.m in Sources */,
 				849192AF16B654CF003B148C /* MAWebViewController.m in Sources */,
 				849192B516B6550B003B148C /* UIScrollView+SVInfiniteScrolling.m in Sources */,
@@ -535,6 +534,7 @@
 				849192E216B6554D003B148C /* MAStaffDetailsCell.m in Sources */,
 				849192E316B6554D003B148C /* MAStaffsTableViewCell.m in Sources */,
 				84901BB216B77AA100F0D4D6 /* MAAppDimensions.m in Sources */,
+				84D9B80616B7B5F100074299 /* MAStaffDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

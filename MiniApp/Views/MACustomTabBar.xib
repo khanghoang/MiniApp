@@ -42,6 +42,7 @@
 						<string key="NSFrame">{{180, 7}, {140, 50}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -244,20 +245,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">MACustomTabBar</string>
 					<string key="superclassName">UIView</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="contactSelected:">id</string>
-						<string key="infoSelected:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="contactSelected:">
-							<string key="name">contactSelected:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="infoSelected:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">infoSelected:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">infoSelected:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">infoSelected:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</dictionary>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="contactButton">UIButton</string>
 						<string key="infoButton">UIButton</string>

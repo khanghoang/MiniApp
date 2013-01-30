@@ -20,6 +20,11 @@
     return self;
 }
 
+- (void)initWith
+{
+
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

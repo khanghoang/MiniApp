@@ -13,8 +13,6 @@ typedef void (^FailureBlock) (NSError *error);
 
 @interface AMDownloader : NSObject
 
-@property (strong, nonatomic) NSMutableData  *receiveData;
-
 +(void)getDataFromURL:(NSString *)url success:(SuccessBlock)success failure:(FailureBlock)failure;
 
 @end
