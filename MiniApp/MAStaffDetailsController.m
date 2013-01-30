@@ -9,7 +9,6 @@
 #import "MAStaffDetailsController.h"
 #import "AddressBook/AddressBook.h"
 #import "MAPerson.h"
-#import "MAStaffDetailsCell.h"
 #import "AFNetworking.h"
 #import "MACustomNavigationBar.h"
 #import <QuartzCore/QuartzCore.h>

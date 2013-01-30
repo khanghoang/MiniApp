@@ -56,7 +56,7 @@
     
     self.starImage.hidden = YES;
     
-    if([[self.delegate getNumberOfTheMostFamous] integerValue] == [[self.delegate getNumberOfName:staff.name] integerValue])
+    if([[self.delegate getNumberOfTheMostFamous] integerValue] == [[self.delegate getNumberOfName:staff.name] integerValue] && [[self.delegate getNumberOfName:staff.name] integerValue] > 0)
     {
         self.starImage.hidden = NO;
     }

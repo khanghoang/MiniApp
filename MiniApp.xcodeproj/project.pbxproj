@@ -31,7 +31,6 @@
 		849192DF16B6554D003B148C /* MACustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192D716B6554D003B148C /* MACustomNavigationBar.m */; };
 		849192E016B6554D003B148C /* MACustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192D916B6554D003B148C /* MACustomTabBar.m */; };
 		849192E116B6554D003B148C /* MACustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849192DA16B6554D003B148C /* MACustomTabBar.xib */; };
-		849192E216B6554D003B148C /* MAStaffDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192DC16B6554D003B148C /* MAStaffDetailsCell.m */; };
 		849192E316B6554D003B148C /* MAStaffsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849192DE16B6554D003B148C /* MAStaffsTableViewCell.m */; };
 		8491932816B65879003B148C /* icon_add_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491931C16B65879003B148C /* icon_add_contact.png */; };
 		8491932916B65879003B148C /* icon_add_contact@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491931D16B65879003B148C /* icon_add_contact@2x.png */; };
@@ -123,8 +122,6 @@
 		849192D816B6554D003B148C /* MACustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MACustomTabBar.h; path = Views/MACustomTabBar.h; sourceTree = "<group>"; };
 		849192D916B6554D003B148C /* MACustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MACustomTabBar.m; path = Views/MACustomTabBar.m; sourceTree = "<group>"; };
 		849192DA16B6554D003B148C /* MACustomTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MACustomTabBar.xib; path = Views/MACustomTabBar.xib; sourceTree = "<group>"; };
-		849192DB16B6554D003B148C /* MAStaffDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAStaffDetailsCell.h; path = Views/MAStaffDetailsCell.h; sourceTree = "<group>"; };
-		849192DC16B6554D003B148C /* MAStaffDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAStaffDetailsCell.m; path = Views/MAStaffDetailsCell.m; sourceTree = "<group>"; };
 		849192DD16B6554D003B148C /* MAStaffsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAStaffsTableViewCell.h; path = Views/MAStaffsTableViewCell.h; sourceTree = "<group>"; };
 		849192DE16B6554D003B148C /* MAStaffsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAStaffsTableViewCell.m; path = Views/MAStaffsTableViewCell.m; sourceTree = "<group>"; };
 		8491931C16B65879003B148C /* icon_add_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_add_contact.png; path = "Resources/Images/Staff details icons/icon_add_contact.png"; sourceTree = "<group>"; };
@@ -332,8 +329,6 @@
 				849192D816B6554D003B148C /* MACustomTabBar.h */,
 				849192D916B6554D003B148C /* MACustomTabBar.m */,
 				849192DA16B6554D003B148C /* MACustomTabBar.xib */,
-				849192DB16B6554D003B148C /* MAStaffDetailsCell.h */,
-				849192DC16B6554D003B148C /* MAStaffDetailsCell.m */,
 				849192DD16B6554D003B148C /* MAStaffsTableViewCell.h */,
 				849192DE16B6554D003B148C /* MAStaffsTableViewCell.m */,
 				84901BB016B77AA100F0D4D6 /* MAAppDimensions.h */,
@@ -531,7 +526,6 @@
 				849192D516B65523003B148C /* UIImageView+AFNetworking.m in Sources */,
 				849192DF16B6554D003B148C /* MACustomNavigationBar.m in Sources */,
 				849192E016B6554D003B148C /* MACustomTabBar.m in Sources */,
-				849192E216B6554D003B148C /* MAStaffDetailsCell.m in Sources */,
 				849192E316B6554D003B148C /* MAStaffsTableViewCell.m in Sources */,
 				84901BB216B77AA100F0D4D6 /* MAAppDimensions.m in Sources */,
 				84D9B80616B7B5F100074299 /* MAStaffDetailsController.m in Sources */,
