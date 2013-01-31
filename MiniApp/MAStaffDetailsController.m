@@ -56,31 +56,17 @@
 {
     // Create Back Button
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0,0,44,44); // width=44, height=44
-    
-    // Set Button Image
-    UIImage *backButtonImage = [UIImage imageNamed:@"icon_back.png"];
-    [backButton setBackgroundImage:backButtonImage forState:UIControlStateNormal];
-    
-    // Important: Set Button Action to go back
+    backButton.frame = CGRectMake(0,0,44,44);
+    [backButton setBackgroundImage:[UIImage imageNamed:@"icon_back.png"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(didTapBackBarItem:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    
-    self.navigationItem.leftBarButtonItem = backBarButtonItem;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     
     // Create Add Contact Button
     UIButton *addToContactButton = [UIButton buttonWithType:UIButtonTypeCustom];
     addToContactButton.frame = CGRectMake(0, 0, 44, 44);
-    
-    UIImage *addToContactButtonImage = [UIImage imageNamed:@"icon_add_contact.png"];
-    [addToContactButton setBackgroundImage:addToContactButtonImage forState:UIControlStateNormal];
-    
+    [addToContactButton setBackgroundImage:[UIImage imageNamed:@"icon_add_contact.png"] forState:UIControlStateNormal];
     [addToContactButton addTarget:self action:@selector(addedToContact:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *addToContactBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:addToContactButton];
-    
-    self.navigationItem.rightBarButtonItem = addToContactBarButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:addToContactButton];;
 }
 
 - (void)addContentsAndGesturesToLabels
@@ -150,66 +136,64 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
+    NSString *buttonTilte = [alertView buttonTitleAtIndex:buttonIndex];
     
-    NSLog(@"Alert View dismissed with button at index %d",buttonIndex);
+    if([buttonTilte isEqualToString:@"cancel"] && alertView.tag != 1)
+        return;
+
+    ABRecordRef aRecord = ABPersonCreate();
+    CFErrorRef  anError = NULL;
     
-    // If button "OK" pressed
-    if (buttonIndex == 1) {
-        // Do add to address book here
-        ABRecordRef aRecord = ABPersonCreate();
-        CFErrorRef  anError = NULL;
-        
-        ABRecordSetValue(aRecord, kABPersonFirstNameProperty, (__bridge CFTypeRef)(self.person.name), &anError);
-        ABRecordSetValue(aRecord, kABPersonLastNameProperty, (__bridge CFTypeRef)(self.person.name), &anError);
-        
-        // Add mail
-        if(self.person.mail)
-        {
-            ABMutableMultiValueRef multiemail = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-            ABMultiValueAddValueAndLabel(multiemail, (__bridge CFStringRef)self.person.mail, kABWorkLabel, NULL);
-            ABRecordSetValue(aRecord, kABPersonEmailProperty, multiemail, &anError);
-        }
-        
-        // Add phone
-        if(self.person.phone)
-        {
-            ABMutableMultiValueRef multi = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-            ABMultiValueAddValueAndLabel(multi, (__bridge CFStringRef)self.person.phone, kABWorkLabel, NULL);
-            ABRecordSetValue(aRecord, kABPersonPhoneProperty, multi, &anError);
-        }
-        
-        if (anError != NULL) {
-            NSLog(@"error while creating..");
-        }
-        
-        CFStringRef firstName, lastName;
-        firstName = ABRecordCopyValue(aRecord, kABPersonFirstNameProperty);
-        lastName  = ABRecordCopyValue(aRecord, kABPersonLastNameProperty);
-        
-        ABAddressBookRef addressBook;
-        CFErrorRef error = NULL;
-        
-        addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-        
-        ABAddressBookAddRecord (addressBook, aRecord, &error);
+    ABRecordSetValue(aRecord, kABPersonFirstNameProperty, (__bridge CFTypeRef)(self.person.name), &anError);
+    ABRecordSetValue(aRecord, kABPersonLastNameProperty, (__bridge CFTypeRef)(self.person.name), &anError);
     
-        if (error != NULL) {
-            NSLog(@"ABAddressBookAddRecord %@", error);
-        }
-        error = NULL;
+    // Add mail
+    if(self.person.mail)
+    {
+        ABMutableMultiValueRef multiemail = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+        ABMultiValueAddValueAndLabel(multiemail, (__bridge CFStringRef)self.person.mail, kABWorkLabel, NULL);
+        ABRecordSetValue(aRecord, kABPersonEmailProperty, multiemail, &anError);
+    }
+    
+    // Add phone
+    if(self.person.phone)
+    {
+        ABMutableMultiValueRef multi = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+        ABMultiValueAddValueAndLabel(multi, (__bridge CFStringRef)self.person.phone, kABWorkLabel, NULL);
+        ABRecordSetValue(aRecord, kABPersonPhoneProperty, multi, &anError);
+    }
+    
+    if (anError != NULL) {
+        NSLog(@"error while creating..");
+    }
+    
+    CFStringRef firstName, lastName;
+    firstName = ABRecordCopyValue(aRecord, kABPersonFirstNameProperty);
+    lastName  = ABRecordCopyValue(aRecord, kABPersonLastNameProperty);
+    
+    ABAddressBookRef addressBook;
+    CFErrorRef error = NULL;
+    
+    addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    
+    ABAddressBookAddRecord (addressBook, aRecord, &error);
+
+    if (error != NULL) {
+        NSLog(@"ABAddressBookAddRecord %@", error);
+    }
+    error = NULL;
+    
+    ABAddressBookSave (addressBook, &error);
+    
+    if (error != NULL) {
+        NSLog(@"ABAddressBookSave %@", error);
+    }
+    // Success
+    else
+    {
+        UIAlertView* successAlert = [[UIAlertView alloc] initWithTitle:@"Added !" message:@"Contact added successfully" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles: nil];
         
-        ABAddressBookSave (addressBook, &error);
-        
-        if (error != NULL) {
-            NSLog(@"ABAddressBookSave %@", error);
-        }
-        // Success
-        else
-        {
-            UIAlertView* successAlert = [[UIAlertView alloc] initWithTitle:@"Added !" message:@"Contact added successfully" delegate:nil cancelButtonTitle:@"Okie" otherButtonTitles: nil];
-            
-            [successAlert show];
-        }
+        [successAlert show];
     }
     
 }
@@ -221,6 +205,7 @@
                                                    delegate:self
                                           cancelButtonTitle:@"Cancel"
                                           otherButtonTitles:@"Ok", nil];
+    alert.tag = 1;
     [alert show];
     
 }
